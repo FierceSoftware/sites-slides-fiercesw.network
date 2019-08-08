@@ -24,7 +24,7 @@ spec:
         - name: STAGE_PROJECT
           value: stage-site-slides-fiercesw-network
         - name: PROD_PROJECT
-          value: site-slides-fiercesw-network
+          value: prod-site-slides-fiercesw-network
       jenkinsfile: |-
         def version
         pipeline {
@@ -171,6 +171,9 @@ spec:
                         if (openshift.selector('route', 'sites-slides-fiercesw-network').exists()) {
                           openshift.selector('route', 'sites-slides-fiercesw-network').delete()
                         }
+                        if (openshift.selector('route', 'secure-sites-slides-fiercesw-network').exists()) {
+                          openshift.selector('route', 'secure-sites-slides-fiercesw-network').delete()
+                        }
                         //openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose()
                         openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose("--hostname=slides.stage.fiercesw.network")
                         openshift.create(readFile('openshift/openshift-staging-secure-route.yaml'))
@@ -204,6 +207,9 @@ spec:
                         }
                         if (openshift.selector('route', 'sites-slides-fiercesw-network').exists()) {
                           openshift.selector('route', 'sites-slides-fiercesw-network').delete()
+                        }
+                        if (openshift.selector('route', 'secure-sites-slides-fiercesw-network').exists()) {
+                          openshift.selector('route', 'secure-sites-slides-fiercesw-network').delete()
                         }
                         //openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose("--hostname=slides.fiercesw.network")
                         openshift.newApp("sites-slides-fiercesw-network:${version}")
