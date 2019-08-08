@@ -3,7 +3,7 @@ kind: Route
 metadata:
   labels:
     app: sites-slides-fiercesw-network
-  name: sites-slides-fiercesw-network
+  name: secure-sites-slides-fiercesw-network
 spec:
   host: slides.fiercesw.network
   port:
