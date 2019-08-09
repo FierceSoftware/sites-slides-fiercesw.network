@@ -375,27 +375,27 @@
 				<section data-background="/img/global/backgrounds/cloudera-edc-bkg.png" data-background-size="cover">
 					<div class="pt-5 pb-5 pl-5 pr-5" style="background-color:rgba(0,0,0,0.75);">
 						<div class="text-left">
-							<img class="img-fix-stretch" src="/img/global/vendor_logos/cloudera_logo_white.png" alt="Cloudera" />
+							<img class="img-fix-stretch mb-5" style="max-width:50%" src="/img/global/vendor_logos/cloudera_logo_white.png" alt="Cloudera" />
 						</div>
 						<h1 class="text-left mb-4">Enterprise Data Cloud Webinar</h1>
-						<h2 class="text-left alt-text pl-3 pt-3 pb-3 mb-5">Past, present, and future</h2>
-						<blockquote class="text-left mt-5 pl-3 pt-3 pb-3 pull-left">
-							<h3 class="text-alt mb-2">Ken Moini</h3>
+						<h2 class="text-left alt-text pl-3 pt-3 pb-3 mb-5">The Platform to Power Your Transformation</h2>
+						<blockquote class="text-left mt-5 pl-5 pt-3 pb-5 pull-left">
+							<h3 class="pt-5 pb-4 mb-2">Ken Moini</h3>
 							Fierce Software &bull; Lead Solution Architect
 						</blockquote>
 					</div>
 
 					<aside class="notes">
-						Welcome everyone, and thank you for joining us today for our Emerging Technology webinar, in partnership with Cloudera.<br />
+						Welcome everyone, and thank you for joining us today for our Enterprise Data Cloud webinar, in partnership with Cloudera.<br />
 						My name is Ken Moini and I’m the Lead Solution Architect at Fierce Software.<br />
 					</aside>
 				</section>
-				<section data-background="/img/global/fierceNASCAR.png" data-background-size="contain">
+				<section data-background="/img/global/newFSWNascar.png" data-background-size="contain">
 					<aside class="notes">
 						Fierce Software is a small, woman-owned Value-Added Reseller.  Our strengths are in enterprise open-source solutions, primarily in secure platforms, DevOps, and Data Analytics.<br />
 						Most of our customers are in the Public Sector, we deal directly with System Integrators so GA, Lockheed, Leidos, so on and so forth.  We work with them to put a lot of these logos together to some really cool things.<br />
 						We enable our customers with some of our value adds such as complimentary training, webinars, and workshops - we can deploy virtually, on-site, coast-to-coast.  We were in San Diego doing a 3-day DevSecOps bit not too long ago, Westfields for a Security Workshop right after that, so holler at us you've got our social little bits there.<br />
-						Today we'll be talking about Cloudera and how they've created a unified platform for the enterprise data cloud.
+						Today we'll be talking about Cloudera and how they've created a unified platform for the Enterprise Data Cloud.
 					</aside>
 				</section>
 				<section data-background="/img/global/backgrounds/sky-828648_1920-min.jpg" data-background-size="cover">
@@ -405,13 +405,21 @@
 						And there are some powerful changes around Big Data, Data Analytics, and Data Science.<br />
 						These changes can either produce a better more cohesive experience, or drive devistating division.<br />
 						Whether you're a nation state, a flush large enterprise, or a resource-strapped organization, data will either make or break you.<br />
+						As government organizations modernize we can expect new initiatives and legislation to help push agencies along their mandates.<br />
+					</aside>
+				</section>
+				<section data-background="/img/global/backgrounds/sky-828648_1920-min.jpg" data-background-size="cover">
+					<h1 class="text-shadow">Federal Agencies have an OPEN Data Requirement</h1>
+					<aside class="notes">
+						One such piece of legislation that was made law earlier in 2019 is the OPEN Government Data Act.<br />
+						This bill requires that all non-sensitive government data be made available in machine-readable formats by default.  Agencies are now called upon to maintain comprehensive data catalogs and designate a nonpolitical chief data officer.<br />
+						It's no longer a question of "Do we do Data?" and now more of a mission of "How do we handle our Data?" and that's a much larger question and quandry to unwrap than first meets the eye.
 					</aside>
 				</section>
 				<section>
 					<h1 class="text-alt">Agenda</h1>
 					<p>&nbsp;</p>
 					<ol>
-						<li class="mb-3 mt-3"><h3>A brief history of Hadoop</h3></li>
 						<li class="mb-3 mt-3 text-alt"><h3>Evolution of Enterprise Data</h3></li>
 						<li class="mb-3 mt-3"><h3>Say "Hello" to the new Cloudera</h3></li>
 						<li class="mb-3 mt-3 text-alt"><h3>Product and Engineering Roadmap</h3></li>
@@ -425,6 +433,7 @@
 						We'll take you through a peak into what's in store, how it affects you, what your next steps are, and there's even a little demo at the end of this - so long as Murphy doesn't show up.
 					</aside>
 				</section>
+				<!--
 				<section>
 					<section data-background-color="#65c2cb">
 						<h1>Hadoop</h1>
@@ -607,7 +616,7 @@
 						</aside>
 					</section>
 				</section>
-
+				-->
 
 				<section>
 
@@ -615,7 +624,17 @@
 						<h1>Enterprise Data</h1>
 						<h2 class="alt-text pt-3 pb-3">Big Data is a Big Deal</h2>
 						<aside class="notes">
-							At this point, you'd think we have the world's problems solved, but Enterprise-ready Data Management required even more as things evolved.
+							Scalable data management is not a new problem, but it has grown over the years and Enterprise-ready Data Management requires even more as things evolved.
+						</aside>
+					</section>
+
+					<section data-background-color="#65c2cb">
+						<p><img src="/img/events/cloudera_webinar/Hadoop_logo.png" class="img-fix-stretch stretch" alt="Hadoop" /></p>
+						<h1 class="alt-text text-white pt-3 pb-3">A History</h1>
+						<aside class="notes">
+							The Hadoop platform, some foundational components dating back to the late 1990s, was created to address this scalable data management problem in a cost effective way on any commodity hardware.<br />
+							Arguably it hit critical mass when a small company called Yahoo! ran a production 700-node Hadoop Cluster in 2007.<br />
+							Within a few short years Cloudera and Hortonworks were founded, Amazon started offering their Elastic MapReduce service, and Yahoo!'s small cluster hit over 42,000 nodes.
 						</aside>
 					</section>
 
@@ -667,7 +686,7 @@
 						<aside class="notes">
 							As organizations started to adopt Enterprise Data practices, there was soon an issue with having many different data silos.<br />
 							Often these different silos were disconnected, housed different kind of data, and rarely was a like format.<br />
-							So what many had were snapshots of different points of insight, without a way to get the value of corellating that data.
+							So what many had were snapshots of different points of data, disperate bits of insight, without a way to get the value of corellating that data.
 						</aside>
 					</section>
 
@@ -700,7 +719,7 @@
 						</div>
 						<aside class="notes">
 							Data has accelerated business and the missions of many agencies, however as the value of commodities like data increase, so does the appeal to malicious parties.<br />
-							Throughout the years, and even more so in the recent few, we've seen time and time again about an organization or agency that has been breached.<br />
+							Throughout the years, and even more so in the recent few, we've seen time and time again about an organization or agency that has been breached, and more often than not it's a case of bad Data Governance and Security instead of a dynamic exploit.<br />
 							Now, imagine the number of systems breached and the amount of data that has been exfiltrated or tampered with that hasn't been detected or reported.<br />
 							Organizations now more than ever have the requirement and often legal responsibility to keep their data campaigns secure.
 						</aside>
@@ -718,7 +737,7 @@
 					</section>
 
 					<section data-background-video="/img/events/cloudera_webinar/v4.mp4" data-background-video-loop="loop">
-						<img class="img-fix-stretch" style="width:50%;margin:8%" src="/img/global/vendor_logos/Cloudera_logo_white.png" alt="Cloudera" />
+						<img class="img-fix-stretch" style="width:50%;margin:8%" src="/img/global/vendor_logos/cloudera_logo_white.png" alt="Cloudera" />
 						<aside class="notes">
 							And now, thanks to the merger, the band is back together again as I like to say.  Cloudera is now unified with the most robust Data Science Open-Source platform.
 						</aside>
