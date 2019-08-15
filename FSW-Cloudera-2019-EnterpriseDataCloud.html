@@ -11,7 +11,7 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/vs2015.css">
-
+		<link rel="stylesheet" href="css/fsw-core-shared.css">
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -22,1414 +22,7 @@
 		</script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<style type="text/css">
-			.text-white {
-				color:#FFF !important;
-			}
-			.alt-text {
-				background:rgba(0,0,0,0.25);
-			}
-			.pull-left {
-				float:left !important;
-			}
-			.pull-right {
-				float:right !important;
-			}
-			.text-left {
-				text-align: left !important;
-			}
-			.text-center {
-				text-align: center !important;
-			}
-			.text-right {
-				text-align: right !important;
-			}
-			.mb-0 {
-				margin-bottom: 0 !important;
-			}
-			.mb-1 {
-				margin-bottom: 0.25rem !important;
-			}
-			.mb-2 {
-				margin-bottom: 0.5rem !important;
-			}
-			.mb-3 {
-				margin-bottom: 1rem !important;
-			}
-			.mb-4 {
-				margin-bottom: 1.5rem !important;
-			}
-			.mb-5 {
-				margin-bottom: 2.25rem !important;
-			}
-			.mt-0 {
-				margin-top: 0 !important;
-			}
-			.mt-1 {
-				margin-top: 0.25rem !important;
-			}
-			.mt-2 {
-				margin-top: 0.5rem !important;
-			}
-			.mt-3 {
-				margin-top: 1rem !important;
-			}
-			.mt-4 {
-				margin-top: 1.5rem !important;
-			}
-			.mt-5 {
-				margin-top: 2.25rem !important;
-			}
-			.ml-0 {
-				margin-left: 0 !important;
-			}
-			.ml-1 {
-				margin-left: 0.25rem !important;
-			}
-			.ml-2 {
-				margin-left: 0.5rem !important;
-			}
-			.ml-3 {
-				margin-left: 1rem !important;
-			}
-			.ml-4 {
-				margin-left: 1.5rem !important;
-			}
-			.ml-5 {
-				margin-left: 2.25rem !important;
-			}
-			.mr-0 {
-				margin-right: 0 !important;
-			}
-			.mr-1 {
-				margin-right: 0.25rem !important;
-			}
-			.mr-2 {
-				margin-right: 0.5rem !important;
-			}
-			.mr-3 {
-				margin-right: 1rem !important;
-			}
-			.mr-4 {
-				margin-right: 1.5rem !important;
-			}
-			.mr-5 {
-				margin-right: 2.25rem !important;
-			}
-			.pb-0 {
-				padding-bottom: 0 !important;
-			}
-			.pb-1 {
-				padding-bottom: 0.25rem !important;
-			}
-			.pb-2 {
-				padding-bottom: 0.5rem !important;
-			}
-			.pb-3 {
-				padding-bottom: 1rem !important;
-			}
-			.pb-4 {
-				padding-bottom: 1.5rem !important;
-			}
-			.pb-5 {
-				padding-bottom: 2.25rem !important;
-			}
-			.pt-0 {
-				padding-top: 0 !important;
-			}
-			.pt-1 {
-				padding-top: 0.25rem !important;
-			}
-			.pt-2 {
-				padding-top: 0.5rem !important;
-			}
-			.pt-3 {
-				padding-top: 1rem !important;
-			}
-			.pt-4 {
-				padding-top: 1.5rem !important;
-			}
-			.pt-5 {
-				padding-top: 2.25rem !important;
-			}
-			.pl-0 {
-				padding-left: 0 !important;
-			}
-			.pl-1 {
-				padding-left: 0.25rem !important;
-			}
-			.pl-2 {
-				padding-left: 0.5rem !important;
-			}
-			.pl-3 {
-				padding-left: 1rem !important;
-			}
-			.pl-4 {
-				padding-left: 1.5rem !important;
-			}
-			.pl-5 {
-				padding-left: 2.25rem !important;
-			}
-			.pr-0 {
-				padding-right: 0 !important;
-			}
-			.pr-1 {
-				padding-right: 0.25rem !important;
-			}
-			.pr-2 {
-				padding-right: 0.5rem !important;
-			}
-			.pr-3 {
-				padding-right: 1rem !important;
-			}
-			.pr-4 {
-				padding-right: 1.5rem !important;
-			}
-			.pr-5 {
-				padding-right: 2.25rem !important;
-			}
-
-			.row {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				-ms-flex-wrap: wrap;
-				flex-wrap: wrap;
-				margin-right: -15px;
-				margin-left: -15px;
-			}
-
-			.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
-			.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
-			.col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
-			.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
-			.col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
-			.col-xl-auto {
-			position: relative;
-			width: 100%;
-			min-height: 1px;
-			padding-right: 15px;
-			padding-left: 15px;
-			}
-
-			.col {
-			-ms-flex-preferred-size: 0;
-			flex-basis: 0;
-			-webkit-box-flex: 1;
-			-ms-flex-positive: 1;
-			flex-grow: 1;
-			max-width: 100%;
-			}
-
-			.col-auto {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 auto;
-			flex: 0 0 auto;
-			width: auto;
-			max-width: none;
-			}
-
-			.col-1 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 8.333333%;
-			flex: 0 0 8.333333%;
-			max-width: 8.333333%;
-			}
-
-			.col-2 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 16.666667%;
-			flex: 0 0 16.666667%;
-			max-width: 16.666667%;
-			}
-
-			.col-3 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 25%;
-			flex: 0 0 25%;
-			max-width: 25%;
-			}
-
-			.col-4 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 33.333333%;
-			flex: 0 0 33.333333%;
-			max-width: 33.333333%;
-			}
-
-			.col-5 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 41.666667%;
-			flex: 0 0 41.666667%;
-			max-width: 41.666667%;
-			}
-
-			.col-6 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 50%;
-			flex: 0 0 50%;
-			max-width: 50%;
-			}
-
-			.col-7 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 58.333333%;
-			flex: 0 0 58.333333%;
-			max-width: 58.333333%;
-			}
-
-			.col-8 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 66.666667%;
-			flex: 0 0 66.666667%;
-			max-width: 66.666667%;
-			}
-
-			.col-9 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 75%;
-			flex: 0 0 75%;
-			max-width: 75%;
-			}
-
-			.col-10 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 83.333333%;
-			flex: 0 0 83.333333%;
-			max-width: 83.333333%;
-			}
-
-			.col-11 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 91.666667%;
-			flex: 0 0 91.666667%;
-			max-width: 91.666667%;
-			}
-
-			.col-12 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 100%;
-			flex: 0 0 100%;
-			max-width: 100%;
-			}
-
-			.order-first {
-			-webkit-box-ordinal-group: 0;
-			-ms-flex-order: -1;
-			order: -1;
-			}
-
-			.order-last {
-			-webkit-box-ordinal-group: 14;
-			-ms-flex-order: 13;
-			order: 13;
-			}
-
-			.order-0 {
-			-webkit-box-ordinal-group: 1;
-			-ms-flex-order: 0;
-			order: 0;
-			}
-
-			.order-1 {
-			-webkit-box-ordinal-group: 2;
-			-ms-flex-order: 1;
-			order: 1;
-			}
-
-			.order-2 {
-			-webkit-box-ordinal-group: 3;
-			-ms-flex-order: 2;
-			order: 2;
-			}
-
-			.order-3 {
-			-webkit-box-ordinal-group: 4;
-			-ms-flex-order: 3;
-			order: 3;
-			}
-
-			.order-4 {
-			-webkit-box-ordinal-group: 5;
-			-ms-flex-order: 4;
-			order: 4;
-			}
-
-			.order-5 {
-			-webkit-box-ordinal-group: 6;
-			-ms-flex-order: 5;
-			order: 5;
-			}
-
-			.order-6 {
-			-webkit-box-ordinal-group: 7;
-			-ms-flex-order: 6;
-			order: 6;
-			}
-
-			.order-7 {
-			-webkit-box-ordinal-group: 8;
-			-ms-flex-order: 7;
-			order: 7;
-			}
-
-			.order-8 {
-			-webkit-box-ordinal-group: 9;
-			-ms-flex-order: 8;
-			order: 8;
-			}
-
-			.order-9 {
-			-webkit-box-ordinal-group: 10;
-			-ms-flex-order: 9;
-			order: 9;
-			}
-
-			.order-10 {
-			-webkit-box-ordinal-group: 11;
-			-ms-flex-order: 10;
-			order: 10;
-			}
-
-			.order-11 {
-			-webkit-box-ordinal-group: 12;
-			-ms-flex-order: 11;
-			order: 11;
-			}
-
-			.order-12 {
-			-webkit-box-ordinal-group: 13;
-			-ms-flex-order: 12;
-			order: 12;
-			}
-
-			.offset-1 {
-			margin-left: 8.333333%;
-			}
-
-			.offset-2 {
-			margin-left: 16.666667%;
-			}
-
-			.offset-3 {
-			margin-left: 25%;
-			}
-
-			.offset-4 {
-			margin-left: 33.333333%;
-			}
-
-			.offset-5 {
-			margin-left: 41.666667%;
-			}
-
-			.offset-6 {
-			margin-left: 50%;
-			}
-
-			.offset-7 {
-			margin-left: 58.333333%;
-			}
-
-			.offset-8 {
-			margin-left: 66.666667%;
-			}
-
-			.offset-9 {
-			margin-left: 75%;
-			}
-
-			.offset-10 {
-			margin-left: 83.333333%;
-			}
-
-			.offset-11 {
-			margin-left: 91.666667%;
-			}
-
-			@media (min-width: 576px) {
-			.col-sm {
-				-ms-flex-preferred-size: 0;
-				flex-basis: 0;
-				-webkit-box-flex: 1;
-				-ms-flex-positive: 1;
-				flex-grow: 1;
-				max-width: 100%;
-			}
-			.col-sm-auto {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 auto;
-				flex: 0 0 auto;
-				width: auto;
-				max-width: none;
-			}
-			.col-sm-1 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 8.333333%;
-				flex: 0 0 8.333333%;
-				max-width: 8.333333%;
-			}
-			.col-sm-2 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 16.666667%;
-				flex: 0 0 16.666667%;
-				max-width: 16.666667%;
-			}
-			.col-sm-3 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 25%;
-				flex: 0 0 25%;
-				max-width: 25%;
-			}
-			.col-sm-4 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 33.333333%;
-				flex: 0 0 33.333333%;
-				max-width: 33.333333%;
-			}
-			.col-sm-5 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 41.666667%;
-				flex: 0 0 41.666667%;
-				max-width: 41.666667%;
-			}
-			.col-sm-6 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 50%;
-				flex: 0 0 50%;
-				max-width: 50%;
-			}
-			.col-sm-7 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 58.333333%;
-				flex: 0 0 58.333333%;
-				max-width: 58.333333%;
-			}
-			.col-sm-8 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 66.666667%;
-				flex: 0 0 66.666667%;
-				max-width: 66.666667%;
-			}
-			.col-sm-9 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 75%;
-				flex: 0 0 75%;
-				max-width: 75%;
-			}
-			.col-sm-10 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 83.333333%;
-				flex: 0 0 83.333333%;
-				max-width: 83.333333%;
-			}
-			.col-sm-11 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 91.666667%;
-				flex: 0 0 91.666667%;
-				max-width: 91.666667%;
-			}
-			.col-sm-12 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 100%;
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
-			.order-sm-first {
-				-webkit-box-ordinal-group: 0;
-				-ms-flex-order: -1;
-				order: -1;
-			}
-			.order-sm-last {
-				-webkit-box-ordinal-group: 14;
-				-ms-flex-order: 13;
-				order: 13;
-			}
-			.order-sm-0 {
-				-webkit-box-ordinal-group: 1;
-				-ms-flex-order: 0;
-				order: 0;
-			}
-			.order-sm-1 {
-				-webkit-box-ordinal-group: 2;
-				-ms-flex-order: 1;
-				order: 1;
-			}
-			.order-sm-2 {
-				-webkit-box-ordinal-group: 3;
-				-ms-flex-order: 2;
-				order: 2;
-			}
-			.order-sm-3 {
-				-webkit-box-ordinal-group: 4;
-				-ms-flex-order: 3;
-				order: 3;
-			}
-			.order-sm-4 {
-				-webkit-box-ordinal-group: 5;
-				-ms-flex-order: 4;
-				order: 4;
-			}
-			.order-sm-5 {
-				-webkit-box-ordinal-group: 6;
-				-ms-flex-order: 5;
-				order: 5;
-			}
-			.order-sm-6 {
-				-webkit-box-ordinal-group: 7;
-				-ms-flex-order: 6;
-				order: 6;
-			}
-			.order-sm-7 {
-				-webkit-box-ordinal-group: 8;
-				-ms-flex-order: 7;
-				order: 7;
-			}
-			.order-sm-8 {
-				-webkit-box-ordinal-group: 9;
-				-ms-flex-order: 8;
-				order: 8;
-			}
-			.order-sm-9 {
-				-webkit-box-ordinal-group: 10;
-				-ms-flex-order: 9;
-				order: 9;
-			}
-			.order-sm-10 {
-				-webkit-box-ordinal-group: 11;
-				-ms-flex-order: 10;
-				order: 10;
-			}
-			.order-sm-11 {
-				-webkit-box-ordinal-group: 12;
-				-ms-flex-order: 11;
-				order: 11;
-			}
-			.order-sm-12 {
-				-webkit-box-ordinal-group: 13;
-				-ms-flex-order: 12;
-				order: 12;
-			}
-			.offset-sm-0 {
-				margin-left: 0;
-			}
-			.offset-sm-1 {
-				margin-left: 8.333333%;
-			}
-			.offset-sm-2 {
-				margin-left: 16.666667%;
-			}
-			.offset-sm-3 {
-				margin-left: 25%;
-			}
-			.offset-sm-4 {
-				margin-left: 33.333333%;
-			}
-			.offset-sm-5 {
-				margin-left: 41.666667%;
-			}
-			.offset-sm-6 {
-				margin-left: 50%;
-			}
-			.offset-sm-7 {
-				margin-left: 58.333333%;
-			}
-			.offset-sm-8 {
-				margin-left: 66.666667%;
-			}
-			.offset-sm-9 {
-				margin-left: 75%;
-			}
-			.offset-sm-10 {
-				margin-left: 83.333333%;
-			}
-			.offset-sm-11 {
-				margin-left: 91.666667%;
-			}
-			}
-
-			@media (min-width: 768px) {
-			.col-md {
-				-ms-flex-preferred-size: 0;
-				flex-basis: 0;
-				-webkit-box-flex: 1;
-				-ms-flex-positive: 1;
-				flex-grow: 1;
-				max-width: 100%;
-			}
-			.col-md-auto {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 auto;
-				flex: 0 0 auto;
-				width: auto;
-				max-width: none;
-			}
-			.col-md-1 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 8.333333%;
-				flex: 0 0 8.333333%;
-				max-width: 8.333333%;
-			}
-			.col-md-2 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 16.666667%;
-				flex: 0 0 16.666667%;
-				max-width: 16.666667%;
-			}
-			.col-md-3 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 25%;
-				flex: 0 0 25%;
-				max-width: 25%;
-			}
-			.col-md-4 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 33.333333%;
-				flex: 0 0 33.333333%;
-				max-width: 33.333333%;
-			}
-			.col-md-5 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 41.666667%;
-				flex: 0 0 41.666667%;
-				max-width: 41.666667%;
-			}
-			.col-md-6 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 50%;
-				flex: 0 0 50%;
-				max-width: 50%;
-			}
-			.col-md-7 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 58.333333%;
-				flex: 0 0 58.333333%;
-				max-width: 58.333333%;
-			}
-			.col-md-8 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 66.666667%;
-				flex: 0 0 66.666667%;
-				max-width: 66.666667%;
-			}
-			.col-md-9 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 75%;
-				flex: 0 0 75%;
-				max-width: 75%;
-			}
-			.col-md-10 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 83.333333%;
-				flex: 0 0 83.333333%;
-				max-width: 83.333333%;
-			}
-			.col-md-11 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 91.666667%;
-				flex: 0 0 91.666667%;
-				max-width: 91.666667%;
-			}
-			.col-md-12 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 100%;
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
-			.order-md-first {
-				-webkit-box-ordinal-group: 0;
-				-ms-flex-order: -1;
-				order: -1;
-			}
-			.order-md-last {
-				-webkit-box-ordinal-group: 14;
-				-ms-flex-order: 13;
-				order: 13;
-			}
-			.order-md-0 {
-				-webkit-box-ordinal-group: 1;
-				-ms-flex-order: 0;
-				order: 0;
-			}
-			.order-md-1 {
-				-webkit-box-ordinal-group: 2;
-				-ms-flex-order: 1;
-				order: 1;
-			}
-			.order-md-2 {
-				-webkit-box-ordinal-group: 3;
-				-ms-flex-order: 2;
-				order: 2;
-			}
-			.order-md-3 {
-				-webkit-box-ordinal-group: 4;
-				-ms-flex-order: 3;
-				order: 3;
-			}
-			.order-md-4 {
-				-webkit-box-ordinal-group: 5;
-				-ms-flex-order: 4;
-				order: 4;
-			}
-			.order-md-5 {
-				-webkit-box-ordinal-group: 6;
-				-ms-flex-order: 5;
-				order: 5;
-			}
-			.order-md-6 {
-				-webkit-box-ordinal-group: 7;
-				-ms-flex-order: 6;
-				order: 6;
-			}
-			.order-md-7 {
-				-webkit-box-ordinal-group: 8;
-				-ms-flex-order: 7;
-				order: 7;
-			}
-			.order-md-8 {
-				-webkit-box-ordinal-group: 9;
-				-ms-flex-order: 8;
-				order: 8;
-			}
-			.order-md-9 {
-				-webkit-box-ordinal-group: 10;
-				-ms-flex-order: 9;
-				order: 9;
-			}
-			.order-md-10 {
-				-webkit-box-ordinal-group: 11;
-				-ms-flex-order: 10;
-				order: 10;
-			}
-			.order-md-11 {
-				-webkit-box-ordinal-group: 12;
-				-ms-flex-order: 11;
-				order: 11;
-			}
-			.order-md-12 {
-				-webkit-box-ordinal-group: 13;
-				-ms-flex-order: 12;
-				order: 12;
-			}
-			.offset-md-0 {
-				margin-left: 0;
-			}
-			.offset-md-1 {
-				margin-left: 8.333333%;
-			}
-			.offset-md-2 {
-				margin-left: 16.666667%;
-			}
-			.offset-md-3 {
-				margin-left: 25%;
-			}
-			.offset-md-4 {
-				margin-left: 33.333333%;
-			}
-			.offset-md-5 {
-				margin-left: 41.666667%;
-			}
-			.offset-md-6 {
-				margin-left: 50%;
-			}
-			.offset-md-7 {
-				margin-left: 58.333333%;
-			}
-			.offset-md-8 {
-				margin-left: 66.666667%;
-			}
-			.offset-md-9 {
-				margin-left: 75%;
-			}
-			.offset-md-10 {
-				margin-left: 83.333333%;
-			}
-			.offset-md-11 {
-				margin-left: 91.666667%;
-			}
-			}
-
-			@media (min-width: 992px) {
-			.col-lg {
-				-ms-flex-preferred-size: 0;
-				flex-basis: 0;
-				-webkit-box-flex: 1;
-				-ms-flex-positive: 1;
-				flex-grow: 1;
-				max-width: 100%;
-			}
-			.col-lg-auto {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 auto;
-				flex: 0 0 auto;
-				width: auto;
-				max-width: none;
-			}
-			.col-lg-1 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 8.333333%;
-				flex: 0 0 8.333333%;
-				max-width: 8.333333%;
-			}
-			.col-lg-2 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 16.666667%;
-				flex: 0 0 16.666667%;
-				max-width: 16.666667%;
-			}
-			.col-lg-3 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 25%;
-				flex: 0 0 25%;
-				max-width: 25%;
-			}
-			.col-lg-4 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 33.333333%;
-				flex: 0 0 33.333333%;
-				max-width: 33.333333%;
-			}
-			.col-lg-5 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 41.666667%;
-				flex: 0 0 41.666667%;
-				max-width: 41.666667%;
-			}
-			.col-lg-6 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 50%;
-				flex: 0 0 50%;
-				max-width: 50%;
-			}
-			.col-lg-7 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 58.333333%;
-				flex: 0 0 58.333333%;
-				max-width: 58.333333%;
-			}
-			.col-lg-8 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 66.666667%;
-				flex: 0 0 66.666667%;
-				max-width: 66.666667%;
-			}
-			.col-lg-9 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 75%;
-				flex: 0 0 75%;
-				max-width: 75%;
-			}
-			.col-lg-10 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 83.333333%;
-				flex: 0 0 83.333333%;
-				max-width: 83.333333%;
-			}
-			.col-lg-11 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 91.666667%;
-				flex: 0 0 91.666667%;
-				max-width: 91.666667%;
-			}
-			.col-lg-12 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 100%;
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
-			.order-lg-first {
-				-webkit-box-ordinal-group: 0;
-				-ms-flex-order: -1;
-				order: -1;
-			}
-			.order-lg-last {
-				-webkit-box-ordinal-group: 14;
-				-ms-flex-order: 13;
-				order: 13;
-			}
-			.order-lg-0 {
-				-webkit-box-ordinal-group: 1;
-				-ms-flex-order: 0;
-				order: 0;
-			}
-			.order-lg-1 {
-				-webkit-box-ordinal-group: 2;
-				-ms-flex-order: 1;
-				order: 1;
-			}
-			.order-lg-2 {
-				-webkit-box-ordinal-group: 3;
-				-ms-flex-order: 2;
-				order: 2;
-			}
-			.order-lg-3 {
-				-webkit-box-ordinal-group: 4;
-				-ms-flex-order: 3;
-				order: 3;
-			}
-			.order-lg-4 {
-				-webkit-box-ordinal-group: 5;
-				-ms-flex-order: 4;
-				order: 4;
-			}
-			.order-lg-5 {
-				-webkit-box-ordinal-group: 6;
-				-ms-flex-order: 5;
-				order: 5;
-			}
-			.order-lg-6 {
-				-webkit-box-ordinal-group: 7;
-				-ms-flex-order: 6;
-				order: 6;
-			}
-			.order-lg-7 {
-				-webkit-box-ordinal-group: 8;
-				-ms-flex-order: 7;
-				order: 7;
-			}
-			.order-lg-8 {
-				-webkit-box-ordinal-group: 9;
-				-ms-flex-order: 8;
-				order: 8;
-			}
-			.order-lg-9 {
-				-webkit-box-ordinal-group: 10;
-				-ms-flex-order: 9;
-				order: 9;
-			}
-			.order-lg-10 {
-				-webkit-box-ordinal-group: 11;
-				-ms-flex-order: 10;
-				order: 10;
-			}
-			.order-lg-11 {
-				-webkit-box-ordinal-group: 12;
-				-ms-flex-order: 11;
-				order: 11;
-			}
-			.order-lg-12 {
-				-webkit-box-ordinal-group: 13;
-				-ms-flex-order: 12;
-				order: 12;
-			}
-			.offset-lg-0 {
-				margin-left: 0;
-			}
-			.offset-lg-1 {
-				margin-left: 8.333333%;
-			}
-			.offset-lg-2 {
-				margin-left: 16.666667%;
-			}
-			.offset-lg-3 {
-				margin-left: 25%;
-			}
-			.offset-lg-4 {
-				margin-left: 33.333333%;
-			}
-			.offset-lg-5 {
-				margin-left: 41.666667%;
-			}
-			.offset-lg-6 {
-				margin-left: 50%;
-			}
-			.offset-lg-7 {
-				margin-left: 58.333333%;
-			}
-			.offset-lg-8 {
-				margin-left: 66.666667%;
-			}
-			.offset-lg-9 {
-				margin-left: 75%;
-			}
-			.offset-lg-10 {
-				margin-left: 83.333333%;
-			}
-			.offset-lg-11 {
-				margin-left: 91.666667%;
-			}
-			}
-
-			@media (min-width: 1200px) {
-			.col-xl {
-				-ms-flex-preferred-size: 0;
-				flex-basis: 0;
-				-webkit-box-flex: 1;
-				-ms-flex-positive: 1;
-				flex-grow: 1;
-				max-width: 100%;
-			}
-			.col-xl-auto {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 auto;
-				flex: 0 0 auto;
-				width: auto;
-				max-width: none;
-			}
-			.col-xl-1 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 8.333333%;
-				flex: 0 0 8.333333%;
-				max-width: 8.333333%;
-			}
-			.col-xl-2 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 16.666667%;
-				flex: 0 0 16.666667%;
-				max-width: 16.666667%;
-			}
-			.col-xl-3 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 25%;
-				flex: 0 0 25%;
-				max-width: 25%;
-			}
-			.col-xl-4 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 33.333333%;
-				flex: 0 0 33.333333%;
-				max-width: 33.333333%;
-			}
-			.col-xl-5 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 41.666667%;
-				flex: 0 0 41.666667%;
-				max-width: 41.666667%;
-			}
-			.col-xl-6 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 50%;
-				flex: 0 0 50%;
-				max-width: 50%;
-			}
-			.col-xl-7 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 58.333333%;
-				flex: 0 0 58.333333%;
-				max-width: 58.333333%;
-			}
-			.col-xl-8 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 66.666667%;
-				flex: 0 0 66.666667%;
-				max-width: 66.666667%;
-			}
-			.col-xl-9 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 75%;
-				flex: 0 0 75%;
-				max-width: 75%;
-			}
-			.col-xl-10 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 83.333333%;
-				flex: 0 0 83.333333%;
-				max-width: 83.333333%;
-			}
-			.col-xl-11 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 91.666667%;
-				flex: 0 0 91.666667%;
-				max-width: 91.666667%;
-			}
-			.col-xl-12 {
-				-webkit-box-flex: 0;
-				-ms-flex: 0 0 100%;
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
-			.order-xl-first {
-				-webkit-box-ordinal-group: 0;
-				-ms-flex-order: -1;
-				order: -1;
-			}
-			.order-xl-last {
-				-webkit-box-ordinal-group: 14;
-				-ms-flex-order: 13;
-				order: 13;
-			}
-			.order-xl-0 {
-				-webkit-box-ordinal-group: 1;
-				-ms-flex-order: 0;
-				order: 0;
-			}
-			.order-xl-1 {
-				-webkit-box-ordinal-group: 2;
-				-ms-flex-order: 1;
-				order: 1;
-			}
-			.order-xl-2 {
-				-webkit-box-ordinal-group: 3;
-				-ms-flex-order: 2;
-				order: 2;
-			}
-			.order-xl-3 {
-				-webkit-box-ordinal-group: 4;
-				-ms-flex-order: 3;
-				order: 3;
-			}
-			.order-xl-4 {
-				-webkit-box-ordinal-group: 5;
-				-ms-flex-order: 4;
-				order: 4;
-			}
-			.order-xl-5 {
-				-webkit-box-ordinal-group: 6;
-				-ms-flex-order: 5;
-				order: 5;
-			}
-			.order-xl-6 {
-				-webkit-box-ordinal-group: 7;
-				-ms-flex-order: 6;
-				order: 6;
-			}
-			.order-xl-7 {
-				-webkit-box-ordinal-group: 8;
-				-ms-flex-order: 7;
-				order: 7;
-			}
-			.order-xl-8 {
-				-webkit-box-ordinal-group: 9;
-				-ms-flex-order: 8;
-				order: 8;
-			}
-			.order-xl-9 {
-				-webkit-box-ordinal-group: 10;
-				-ms-flex-order: 9;
-				order: 9;
-			}
-			.order-xl-10 {
-				-webkit-box-ordinal-group: 11;
-				-ms-flex-order: 10;
-				order: 10;
-			}
-			.order-xl-11 {
-				-webkit-box-ordinal-group: 12;
-				-ms-flex-order: 11;
-				order: 11;
-			}
-			.order-xl-12 {
-				-webkit-box-ordinal-group: 13;
-				-ms-flex-order: 12;
-				order: 12;
-			}
-			.offset-xl-0 {
-				margin-left: 0;
-			}
-			.offset-xl-1 {
-				margin-left: 8.333333%;
-			}
-			.offset-xl-2 {
-				margin-left: 16.666667%;
-			}
-			.offset-xl-3 {
-				margin-left: 25%;
-			}
-			.offset-xl-4 {
-				margin-left: 33.333333%;
-			}
-			.offset-xl-5 {
-				margin-left: 41.666667%;
-			}
-			.offset-xl-6 {
-				margin-left: 50%;
-			}
-			.offset-xl-7 {
-				margin-left: 58.333333%;
-			}
-			.offset-xl-8 {
-				margin-left: 66.666667%;
-			}
-			.offset-xl-9 {
-				margin-left: 75%;
-			}
-			.offset-xl-10 {
-				margin-left: 83.333333%;
-			}
-			.offset-xl-11 {
-				margin-left: 91.666667%;
-			}
-			}
-
-
-			.text-orange {
-				color: rgb(255,131,0);
-			}
-			.orange-top-border {
-				border-top:2px solid rgb(255,131,0) !important;
-			}
-			.text-alt, .text-alt * {
-				color:#42affa !important;
-			}
-			.text-alt-red, .text-alt-red * {
-				color:#ff2e43 !important;
-			}
-			.img-fix-max {
-				max-height:90vh !important;
-				max-width:90vw !important;
-				border:none !important;
-				box-shadow: none !important;
-				background: none !important;
-			}
-			.img-fix-stretch {
-				border:none !important;
-				box-shadow: none !important;
-				background: none !important;
-			}
-			.siloHolder {
-				display: inline-block;
-				margin: 0 auto;
-			}
-			.siloHolder .siloRow {
-				width:1440px;
-			}
-			.siloHolder .silo {
-				border-radius: 50%;
-				background: #FFF;
-				border: 0.2rem solid #000;
-				color:#333;
-				width:200px;
-				height:200px;
-				text-align: center;
-				margin:15px;
-				float:left;
-				line-height: 200px;
-			}
-			.siloHolder .silo.trans {
-				background:none;
-				border:0.2rem solid transparent;
-			}
-			.siloHolder .silo.active {
-				background:rgba(255,255,255,0.8);
-			}
-
-			.reveal pre.kemo-fix {
-				max-height: 90vh;
-				min-height: 75vh;
-			}
-			.reveal pre.kemo-fix code {
-				max-height: 90vh;
-				min-height: 75vh;
-				line-height: 2.25rem;
-				font-size: 2rem;
-			}
-			.list-unstyled {
-				list-style: none !important;
-				list-style-type: none !important;
-			}
-			.blockHolder {
-				width:100%;
-				float:left;
-			}
-			.blockHolder .block-4 {
-				width:28%;
-				margin:1%;
-				padding:1%;
-				background-color:rgba(0,0,0,0.5);
-				float:left;
-				color:#FFF;
-			}
-			.blockHolder .block-3 {
-				width:21%;
-				margin:1%;
-				padding:1%;
-				background-color:rgba(0,0,0,0.5);
-				float:left;
-				color:#FFF;
-			}
-			.blockHolder .block-8 {
-				width:60%;
-				margin:1%;
-				padding:1%;
-				background-color:rgba(0,0,0,0.5);
-				float:left;
-				color:#FFF;
-			}
-			.text-shadow {
-			  text-shadow: 3px 3px 8px rgba(0,0,0,0.9) !important;
-			}
-			.timeline-container {
-				width:100%;
-				padding:0;
-				margin: 0;
-			}
-			.timeline-container .middle-line {
-				border-left:3px solid #000;
-				width:1px;
-				float: left;
-				height:100vh;
-			}
-			.timeline-container .left {
-				float:left;
-				width:calc(50% - 2px);
-			}
-			.timeline-container .right {
-				float:left;
-				width:calc(50% - 2px);
-			}
-			.timeline-container .right h3 {
-			    float: left;
-			    margin-left: 1rem;
-			    margin-top: 5rem;
-			}
-			.timeline-container .right h3:before {
-			    content: " ";
-			    border-top: 1px solid #000;
-			    width: 6rem;
-			    height: 3px;
-			    display: inline-block;
-			    position: relative;
-			    bottom: 0.65rem;
-			    margin-right: 1rem;
-			}
-			.timeline-container .left h3 {
-			    float: right;
-			    margin-right: 1rem;
-			    margin-top: 5rem;
-			}
-			.timeline-container .left h3:after {
-			    content: " ";
-			    border-top: 1px solid #000;
-			    width: 6rem;
-			    height: 3px;
-			    display: inline-block;
-			    position: relative;
-			    bottom: 0.65rem;
-			    margin-left: 1rem;
-			}
-			.timeline-container .event {
-			    float:left;
-					width:100%;
-			}
-			.timeline-container .event .body {
-			    display: inline-block;
-			}
-			.timeline-container .right .event .body {
-
-			}
-			.timeline-container .left .event .body {
-
-			}
-			.white-out:after {
-	        position: absolute;
-	        content: '';
-	        display: block;
-	        top: 0;
-	        left: 0;
-	        right: 0;
-	        bottom: 0;
-	        background: rgba(255,255,255,.5);
-	    }
-			.color-overlay:after {
-			    position: absolute;
-			    content: "";
-			    height: 100%;
-			    width: 100%;
-			    top: 0;
-			    left: 0;
-					opacity:0.3;
-			    /* background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,rgba(255,0,0,0.65) 100%); */
-			    background: radial-gradient(rgb(39, 100, 212) 50%, rgb(0, 0, 0) 90%);
-			}
+			
 		</style>
 	</head>
 	<body>
@@ -1437,19 +30,21 @@
 			<div class="slides">
 				<section data-background="/img/global/fierceSplash.png">
 				</section>
+				<!--
 				<section data-background="/img/global/fierceSplash.png">
 					<marquee style="position:absolute;top:90vh;left:0;width:100%;background:rgba(0,0,0,0.5);padding:1rem;">The webinar will begin shortly.</marquee>
 				</section>
 				<section data-background-video="/img/global/kenmoini_WW.mp4">
 				</section>
+				-->
 				<section data-background="/img/global/backgrounds/cloudera-edc-bkg.png" data-background-size="cover">
 					<div class="pt-5 pb-5 pl-5 pr-5" style="background-color:rgba(0,0,0,0.75);">
 						<div class="text-left">
 							<img class="img-fix-stretch mb-5" style="max-width:50%" src="/img/global/vendor_logos/cloudera_logo_white.png" alt="Cloudera" />
 						</div>
 						<h1 class="text-left mb-4">Enterprise Data Cloud Webinar</h1>
-						<h2 class="text-left alt-text pl-3 pt-3 pb-3 mb-5">The Platform to Power Your Transformation</h2>
-						<blockquote class="text-left mt-5 pl-5 pt-3 pb-5 pull-left">
+						<h2 class="text-left alt-text pl-3 pt-3 pb-3 mb-0">The Platform to Power Your Transformation</h2>
+						<blockquote class="text-left mt-5 pl-5 pt-3 pb-5 pull-left" style="left:-2rem;top:2rem;">
 							<h3 class="pt-5 pb-4 mb-2">Ken Moini</h3>
 							Fierce Software &bull; Lead Solution Architect
 						</blockquote>
@@ -1463,8 +58,8 @@
 				<section data-background="/img/global/newFSWNascar.png" data-background-size="contain">
 					<aside class="notes">
 						Fierce Software is a small, woman-owned Value-Added Reseller.  Our strengths are in enterprise open-source solutions, primarily in secure platforms, DevOps, and Data Analytics.<br />
-						Most of our customers are in the Public Sector, we deal directly with System Integrators so GA, Lockheed, Leidos, so on and so forth.  We work with them to put a lot of these logos together to some really cool things.<br />
-						We enable our customers with some of our value adds such as complimentary training, webinars, and workshops - we can deploy virtually, on-site, coast-to-coast.  We were in San Diego doing a 3-day DevSecOps bit not too long ago, Westfields for a Security Workshop right after that, so holler at us you've got our social little bits there.<br />
+						Most of our customers are in the Public Sector, we deal directly with Federal System Integrators so the Prime Contractors that make the planes, trains, and automobiles. We work with them to put a lot of these logos together to do some really cool things.<br />
+						We enable our customers with some of our value adds such as complimentary training, webinars, and workshops - we can deploy virtually, on-site, coast-to-coast.  We drop in with a lab, can work across Automation, Containers, DevOps, Security, and Data Science to name a few topics. We've done lunch and learns to 4-day team training campaigns so holler at us if you'd like to explore your own training and workshops.  You've got our social little bits there, we'll provide our contact information at the end as well.<br />
 						Today we'll be talking about Cloudera and how they've created a unified platform for the Enterprise Data Cloud.
 					</aside>
 				</section>
@@ -1499,7 +94,7 @@
 					<aside class="notes">
 						Before we get too deep into the esoteric-nature of life, love, and data, we'll take a look at how some of this all started.<br />
 						Since IT Modernization has been driven hand-in-hand with Data Management, we'll see how things have changed over the years, including a recent change from Hortonworks and Cloudera.<br />
-						We'll take you through a peak into what's in store, how it affects you, what your next steps are, and there's even a little demo at the end of this - so long as Murphy doesn't show up.
+						We'll take you through a peak into what's in store with Cloudera's Enterprise Data Cloud platform, how it affects you, what your next steps are so long as Murphy doesn't show up.
 					</aside>
 				</section>
 				<!--
@@ -1693,7 +288,7 @@
 						<h1>Enterprise Data</h1>
 						<h2 class="alt-text pt-3 pb-3">Big Data is a Big Deal</h2>
 						<aside class="notes">
-							Scalable data management is not a new problem, but it has grown over the years and Enterprise-ready Data Management requires even more as things evolved.
+							Scalable data management is not a new problem, but it has grown over the years and Enterprise-ready Data Management requires even more as technology evolved.
 						</aside>
 					</section>
 
@@ -1713,7 +308,7 @@
 							<h2 class="alt-text pt-3 pb-3">Growing Pains</h2>
 						</div>
 						<aside class="notes">
-							Hadoop has helped solve some issues related to cost, distribution, and scale and is used around the world, though as the deployment of enterprise data was adopted additional challenges were presented.
+							This popularly growing data platform had helped solve some issues related to cost, distribution, and scale and is used around the world, though as the deployment of enterprise data was adopted additional challenges were presented.
 						</aside>
 					</section>
 
@@ -1799,9 +394,9 @@
 						<img class="img-fix-stretch fragment fade-up" style="width:30%;margin:8%" src="/img/global/vendor_logos/Cloudera_logo_white.png" alt="Cloudera" />
 						<img class="img-fix-stretch fragment fade-up" style="width:30%;margin:8%" src="/img/global/vendor_logos/hortonworks-logo-white.png" alt="Cloudera" />
 						<aside class="notes">
-							Throughout the years, the Hadoop ecosystem responded to these challenges.<br />
+							Throughout the years, the data management ecosystem responded to these challenges.<br />
 							Cloudera put years of work into next generation sciences that enabled new forms of Machine Learning and AI.<br />
-							Hortonworks provided the development into advancing expanding the Hadoop foundations to produce an enterprise-ready data platform.
+							Hortonworks provided the development into advancing foundational technologies to produce an enterprise-ready data platform.
 						</aside>
 					</section>
 
@@ -1845,7 +440,7 @@
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaTopIndustries.png" data-background-size="cover">
 						<aside class="notes">
-							 Of those companies and organizations around the world, you can find Cloudera products almost everywhere you look from the financial sector, to medicine, and most certainly the Public Sector where the government here and abroad rely on Cloudera's expertise and ability to drive their concerns and needs in the Hadoop ecosystem.
+							 Of those companies and organizations around the world, you can find Cloudera products almost everywhere you look from the financial sector, to medicine, and most certainly the Public Sector where the government here and abroad rely on Cloudera's expertise and ability to drive their concerns and needs around data management.
 						</aside>
 					</section>
 
@@ -1866,10 +461,9 @@
 							</div>
 						</div>
 						<aside class="notes">
-							Cloudera is 100% focused on delivering the industry’s first EDC.  We are so focused we have changed our tag line to The Enterprise Data Cloud Company.<br />
-							EDC may be new, but Cloudera's “why” and “how” are not they have remained what drives their mission<br />
-							The EDC from the Edge to AI is what they deliver to help our customers<br />
-							Let’s break each of these down
+							Cloudera is 100% focused on delivering the industry’s first EDC.  They are so focused that they changed their tag line to The Enterprise Data Cloud Company with a newly defined mission.<br />
+							The EDC may be new, but Cloudera's “why” and “how” are not, & they have remained what drives their mission<br />
+							The EDC, from the Edge to AI, is what they deliver to help our customers remove barriers, gain insight, and manage their data securely.<br />
 						</aside>
 					</section>
 					<section data-transition="fade-in" data-background-color="#293c46">
@@ -1893,18 +487,16 @@
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaDeliverEDC.png" data-background-size="cover">
 						<aside class="notes">
-								This is what Cloudera offers TODAY – the E2AI, core capabilities for the EDC.
-
-								Cloudera addresses all of the key elements of an EDC today – multi-function analytics, hybrid and multi cloud, secure & governed and open.
+								This is what Cloudera offers TODAY – the E2AI, core capabilities for the EDC.<br />
+								Cloudera addresses all of the key elements of an EDC today – multi-function analytics, hybrid and multi cloud deployments and interoperability, secure, governed, and open.<br />
 								As the product lines between the Hortonworks and Cloudera portfolio merge, we're seeing even deeper and more powerful integrations between these components and systems.
-								
 						</aside>
 					</section>
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBkg.png" data-background-size="cover">
 						<h1>Cloudera DataFlow</h1>
 						<aside class="notes">
-							 
+							 One of the integral parts in Cloudera's Enterprise Data Cloud is Cloudera DataFlow.
 						</aside>
 					</section>
 
@@ -1916,38 +508,39 @@
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFUsecases.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 With CDF you can quickly migrate your data or even just parts of it, to new geos, storage types, and so on.  Enrich your data on fly, pulling in and aggrigating between multiple sources of data to deliver more rich analytics and more holistic vantage points.  In case your SIEM (Security Information and Event Management) system is eating your budget, you can use CDF to cancel out the noise and stream only what's important, be that logs, actions, sensor feedback, or any other sort of data.
 						</aside>
 					</section>
-
+<!--
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBkg.png" data-background-size="cover">
 						<h1>Flow Management</h1>
 						<aside class="notes">
 							 
 						</aside>
 					</section>
-
-					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFHigh.png" data-background-size="cover">
-						<aside class="notes">
-							 
-						</aside>
-					</section>
+-->
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFCapsIcons.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 With CDF you can take data in from various sources, be that a data lake you have in a public cloud, your on-premise data warehouse, or even web-based streamed data such as social media streams.  From there you can quickly organize, sort, and transform the streamed data while in flight, and set parameters and policies on where that data goes, such as another tool like Elastic or your SIEM.
 						</aside>
 					</section>
-
+<!--
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFCapsFlow.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 Now, you may wonder if this is difficult - not at all, in fact there's a 
+						</aside>
+					</section>
+-->
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFHigh.png" data-background-size="cover">
+						<aside class="notes">
+							In case you have a high volume of data to manage and stream, CDF can respond to millions of events a second with data of almost any size imaginable.  Governance policies and life cycles are managed easily from the same secure and end-to-end encrypted drag-and-drop UI that you build your flows in, and if there isn't a stream processor already available in the expansive catalog it's rather easy to create one.
 						</aside>
 					</section>
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFFReg.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							You have more than the Web UI as an interface, flows and their components are stored as files and can be edited manually or produced as part of an automation pipeline.  With the version control offered by the registry in CDF, you can apply the same DevOps and CI/CD workflows that your other development teams benefit from.
 						</aside>
 					</section>
 
@@ -1960,13 +553,13 @@
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaE2EDM.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 CDF can offer more than just streaming of data, it can offer a way to govern the movement and weight of your data through your enterprise.  This allows you to not only stream, transform, aggrigate, and enrich streaming data but also ensures that it only arrives at its intended destination.
 						</aside>
 					</section>
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaEM.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 Now, CDF is what helps Cloudera tackle the Edge to AI.  With Minifi, you can stream data from small IoT devices at and beyond the edge.  This can fit on megar IoT and Single Board Computing devices such as the original Raspberry Pi, to more hardened and weather proof real-time OS driven embedded sensors.
 						</aside>
 					</section>
 
@@ -1979,16 +572,16 @@
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaKeyChallenges.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 Now as you're streaming this data in and out of your data lakes and in-between your edge devices, you'll run into some common problems.  Some streaming solutions require you to move your data somewhere, store it in a specific way, in order to be used which wastes a lot of costly resources and most importantly - time.  Often times this is time-series based data so the information is more crucial at the time of inception, which means your insights and analytics programs are operating after the fact instead of being able to respond immediately.  And if you've got all that tacked then I'm sure you know and see every piece of data moving through your enterprise, right?
 						</aside>
 					</section>
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaStreamProcessing.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 The solutions offered in CDF actually do tackle those challenges.  With Kafka you have a robust and scalable Publisher/Subscriber queue that can respond to millions of streams.  Apache Storm allows you to act and process upon those streams in real time while the data is still in flight without needing to offload and aggrigate onto a compute cluster.  With the Streams Messaging Manager and the Streaming Analytics Manager you gain the ability to not only see the streams going through your system and their associated properties but you can analyze and visualize thoses streams as well.  The Schema Manager extends powerful access and version control to the key components that make up your flow and provides a collaborative CI/CD workflow to accellerate your data campaigns.
 						</aside>
 					</section>
-
+<!--
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBetterTogether.png" data-background-size="cover">
 						<aside class="notes">
 							 
@@ -2007,12 +600,19 @@
 						</aside>
 					</section>
 
-					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaKeyDifferenciators.png" data-background-size="cover">
+-->
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFOverview.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							These and other technologies come together to offer you the CDF platform, one of the key components in the EDC that harnesses all of your data, from Edge 2 AI.
 						</aside>
 					</section>
 
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaKeyDifferenciators.png" data-background-size="cover">
+						<aside class="notes">
+							 Outside of the technology stack, a few things that set apart CDF is the assurance of Cloudera's 100% dedication to Open Source.  As I mentioned before, there are a bevy of built-in stream processors, the number of which has almost doubled in the last 2 years due to the drive of the community and how easy it is to create new data processors that can work across multiple streaming analytics engines, with governance and management policies baked in.
+						</aside>
+					</section>
 
 					<section data-transition="slide-out" data-background-color="#293c46">
 					</section>
@@ -2026,10 +626,10 @@
 
 					<section data-background-video="/img/events/cloudera_webinar/geometric-tunnel_wjd0nkzzh__D.mp4" data-background-video-loop="loop">
 						<div class="pl-5 pr-5" style="background:rgba(0,0,0,0.5)">
-							<h1 class="pt-5 pb-5">Cloudera Product Roadmap</h1>
+							<h1 class="pt-5 pb-5">Cloudera Platform Roadmap</h1>
 						</div>
 						<aside class="notes">
-							Now for a quick look at how things are shaping up with the merger of these technology platforms.
+							Now for something a lot of our customers have been asking out, we'll be taking a quick look at how things are shaping up with the merger of these technology platforms.
 						</aside>
 					</section>
 
@@ -2042,7 +642,7 @@
 
 					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaYourEnterpriseDataCloud.png" data-background-size="cover">
 						<aside class="notes">
-							 
+							 Something being introduced with the new Cloudera EDC is a simple set of tools to manage your entire EDC.  You'll get a single pane of glass to act upon your data lakes, polcies, and workloads.
 						</aside>
 					</section>
 
