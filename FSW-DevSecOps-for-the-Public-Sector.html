@@ -1,0 +1,2289 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DevSecOps for the Public Sector Webinar</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/vs2015.css">
+		<link rel="stylesheet" href="css/fsw-core-shared.css">
+		<link rel="stylesheet" href="vendor/fontawesome-free-5.10.2-web/css/all.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<style type="text/css">
+			.unstyled-list {
+				list-style: none;
+				list-style-type: none !important;
+			}
+			.big-list li {
+				font-size: 5rem !important;
+				margin:2rem 0;
+				text-align: center
+			}
+			.timeline-white .middle-line {
+				border-left:3px solid #FFF;
+			}
+			.timeline-white.timeline-container .right h3:before {
+				border-top:1px solid #FFF;
+			}
+			.timeline-white.timeline-container .left h3:after {
+				border-top:1px solid #FFF;
+			}
+			.siloHolder .silo.black {
+				background:#000;
+				color:#FFF;
+			}
+			.speech-bubble-to-left {
+				position: relative;
+				background: #00aabb;
+				border-radius: .4em;
+			}
+
+			.speech-bubble-to-left:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border: 1.25em solid transparent;
+				border-top-color: #00aabb;
+				border-bottom: 0;
+				border-left: 0;
+				margin-left: -0.625em;
+				margin-bottom: -1.25em;
+			}
+			.speech-bubble-to-right {
+				position: relative;
+				background: #00aabb;
+				border-radius: .4em;
+			}
+
+			.speech-bubble-to-right:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border: 1.25em solid transparent;
+				border-top-color: #00aabb;
+				border-bottom: 0;
+				border-right: 0;
+				margin-left: -0.625em;
+				margin-bottom: -1.25em;
+			}
+			.text-trans-initial {
+				text-transform: initial !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="/img/global/fierceSplash.png">
+				</section>
+
+				<section data-background="/img/global/fierceSplash.png">
+					<marquee style="position:absolute;top:90vh;left:0;width:100%;background:rgba(0,0,0,0.5);padding:1rem;">The webinar will begin shortly.</marquee>
+				</section>
+
+				<section data-background-video="/img/global/kenmoini_WW.mp4">
+				</section>
+
+				<section data-background="/img/global/backgrounds/devsecopsBkg.png" data-background-size="cover">
+					<div class="pt-5 pb-5 pl-5 pr-5">
+						<h2 class="text-left mb-4">DevSecOps for the Public Sector</h2>
+						<h3 class="text-left pl-3 pt-3 pb-3 mb-0 text-alt">Secure Software Factories<br /> to Power Your Transformation</h3>
+					</div>
+
+					<aside class="notes">
+						Welcome everyone, and thank you for joining us today for our DevSecOps for the Public Sector webinar, in partnership with CloudBees and Sonatype.<br />
+						My name is Ken Moini and I’m the Lead Solution Architect at Fierce Software.<br />
+					</aside>
+				</section>
+
+				<section data-background="/img/global/newFSWNascar.png" data-background-size="contain">
+					<aside class="notes">
+						Fierce Software is a small, woman-owned Value-Added Reseller.  Our strengths are in enterprise open-source solutions, primarily in secure platforms, DevOps, and Data Analytics.<br />
+						Most of our customers are in the Public Sector, we deal directly with Federal System Integrators so the Prime Contractors that make the planes, trains, and automobiles. We work with them to put a lot of these logos together to do some really cool things.<br />
+						We enable our customers with some of our value adds such as complimentary training, webinars, and workshops - we can deploy virtually, on-site, coast-to-coast in a single week.  We drop in with a lab, can work across Automation, Containers, DevOps, Security, and Data Science to name a few topics. We've done lunch and learns to certified 4-day team training campaigns so holler at us if you'd like to explore your own training and workshops.  You've got our social little bits there, we'll provide our contact information at the end as well.<br />
+						Today we'll be focused on all things related to DevOps and Security.
+					</aside>
+				</section>
+
+				<section data-background-color="#08130f">
+
+					<section data-background-transition="slide" data-background="/img/events/devsecops/176490.png" data-background-size="cover">
+						<h1 style="text-transform:inherit;">Do you even DevOps, bro?</h1>
+						<aside class="notes">
+							As we start to jump into our conversation, it's hard to talk DevOps without including one of the pioneers in DevOps platforms - CloudBees.
+						</aside>
+					</section>
+
+					<section data-background-color="#08130f">
+						<div style="">
+							<img src="/img/global/vendor_logos/cloudbees-logo-share__white.png" class="img-fix-stretch stretch" style="min-width:50%;" alt="Cloudbees" />
+						</div>
+						<aside class="notes">
+							So at this time I'd like to introduce my cohort and partner in crime for this event, the other half of the Ben and Ken, the Ben and Ken show - Ben Chicoski, Public Sector Team Lead at CloudBees.  He's going to introduce himself, CloudBees, and how they're a leader, pioneer, and the experts in this space.
+						</aside>
+					</section>
+
+					<section data-background-color="#08130f">
+					</section>
+
+					<section data-background-color="#FFF">
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background-color="#FFF" data-background-transition="slide" data-transition="slide">
+						<img src="/img/global/vendor_logos/cloudbees-logo-share_2.png" class="img-fix-stretch" alt="Cloudbees" />
+					</section>
+
+					<section data-background-transition="zoom" data-transition="zoom" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide1.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide2.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide3.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide4.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide5.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide6.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide7.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide8.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide9.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide10.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide11.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide12.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide13.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide14.PNG" data-background-size="cover">
+						<aside class="notes">
+							Interject about personal anecdotes on training/CCJE
+						</aside>
+					</section>
+
+					<!--
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide15.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide16.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide17.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide18.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide19.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/20190826_DSO_webinar_Fierce/Slide20.PNG" data-background-size="cover">
+						<aside class="notes">
+						</aside>
+					</section>
+					-->
+
+					<section data-background-color="#FFF">
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-background-color="#08130f">
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background-color="#08130f">
+						<div style="">
+							<img src="/img/events/devsecops/sohot.jpg" class="img-fix-stretch stretch" style="min-width:50%;" alt="DevOps So hot Right now" />
+						</div>
+						<aside class="notes">
+							Alrighty, well now that we've got the Ben and Ken show rightly in motion, we've got the CloudBees experts in our corner, we can start talking DevOps - it's all the rage.
+						</aside>
+					</section>
+
+					<section data-background-color="#08130f">
+					</section>
+
+					<section data-background-color="#FFF">
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/thinker.png">
+						<aside class="notes">
+							So let's think about that busy word, DevOps
+						</aside>
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/devopsThink.png">
+						<aside class="notes">
+							So as you start to think DevOps, what comes to mind?
+						</aside>
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/devopsThinkCloud.png">
+						<aside class="notes">
+							We're definately talking about the cloud
+						</aside>
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/devopsThinkCloudContainers.png">
+						<aside class="notes">
+							There's something about this containers stuff...
+						</aside>
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/devopsThinkCloudContainersPipeline.png">
+						<aside class="notes">
+							Heard my CTO say something about pipelines in our briefing the other day...
+						</aside>
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/devopsThinkCloudContainersPipelineAgile.png">
+						<aside class="notes">
+							And then there's that synergy, agile thing, right?  Hmm - haha *evil laugh* well this is just scratching the surface cause as you look at DevOps solutions you end up with this:
+						</aside>
+					</section>
+
+					<section data-background-transition="zoom" data-background="/img/events/devsecops/cnfl.png">
+						<aside class="notes">
+							Hundreds of logos!  All sorts of DevOps-y, Cloud-native, containerized fun!  Where do you start?  You wanna see CloudBees?  *zoom*  We're not on here...yet...give it a few months...ANYWHO...
+						</aside>
+					</section>
+
+					<section data-background-color="#08130f">
+						<h1 class="text-alt alt-text">Digital Transformation</h1>
+						<ul class="unstyled-list big-list">
+							<li><i class="fa fa-cloud mr-5"></i> Hybrid & Multicloud</li>
+							<li class="text-alt"><i class="fa fa-fighter-jet mr-5"></i> Speed</li>
+							<li><i class="fa fa-chess-rook mr-5"></i> Security</li>
+						</ul>
+						<aside class="notes">
+							Anyway, that eye-chart is basically the explosion of that big kahuna buzz word - Digital transformation.  All that is is the natural progression of technology, but as a common place mechanism for every business, organization, or agency.  Every company is a software company now and that can set you apart by leagues.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade-out" data-background-color="#08130f">
+						<h1 class="text-alt">DevOps Distilled</h1>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Everything as Code (XaC)</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Application monitoring</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Automate everything</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Rapid feedback</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Continuous Integration/Delivery</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Rebuild vs Repair</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Application is always "releasable"</span>
+							</div>
+							<div class="col-sm-12 col-md-6 mt-3 mb-3 text-center">
+								<span class="alt-text pt-3 pb-3" style="width:96%;display:inline-block;">Delivery pipeline</span>
+							</div>
+						</div>
+						<aside class="notes">
+							So I like boiling things down to the root cause - if you look at most of DevOps practices, tools, workflows you get a few key tenants.<br />
+							Your Git repo is going to be your best friend - from infrastructure deployment scripts, documentation, applications of course, and more.<br />
+							Rapid feedback to constantly learn and better processes with indepth monitoring is how you make your workflows more effective.<br />
+							We're now using immutible systems and not SSH'ing into machines to fix because it's easier and faster to debug and redeploy since the application is always releasable, powered by an automated pipeline.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-background="/img/events/devsecops/devopsLifecycle.png">
+						<aside class="notes">
+							DevOps is more than just idiologies, it's a way of life!
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-background="/img/events/devsecops/devopsLifecycleWords.png">
+						<aside class="notes">
+							There's a lifecycle involved and we have to develop to these new workflows to ensure that we're actually benefiting from this DevOps stuff - without monitoring and feedback we're not far from just deployments with bash scripts which doesn't scale.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-background-color="#08130f">
+						<h1 class="alt-text">DevOps Adoption Rate 2017</h1>
+						<span class="text-alt" style="font-size:20rem; margin:8rem 0;display:inline-block;width:100%;"><strong>78%</strong></span>
+						<small><em>Source: RightScale 2017 State of the Cloud Report</em></small>
+						<aside class="notes">
+							Now, thankfully DevOps isn't a niche thing that only the largest of corperations or most special of shops run - it's about as popular as a Pumpkin Spice Latte.  OH YEAH PUMPKIN SPICE LATTES WOOO!
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#08130f">
+						<div class="timeline-container timeline-white timeline-vertical">
+							<div class="left">
+								<div class="event fragment fade-right" data-fragment-index="1" style="margin-top:10vh;">
+									<h3><i style="font-size:10rem;" class="fa fa-user-tie"></i></h3>
+									<div class="body">
+										<h2 class="mt-5 pt-5">Business</h2>
+										<p>Dolla dolla y'all</p>
+									</div>
+								</div>
+								<div class="event fragment fade-right" data-fragment-index="3" style="margin-top:10vh;">
+									<h3><i style="font-size:10rem;" class="fa fa-user-ninja"></i></h3>
+									<div class="body">
+										<h2 class="mt-5 pt-5">Dev</h2>
+										<p>Ninja Coders</p>
+									</div>
+								</div>
+							</div>
+							<div class="middle-line">
+							</div>
+							<div class="right">
+								<div class="event fragment fade-left" data-fragment-index="2" style="margin-top:20vh;">
+									<h3><i style="font-size:10rem;" class="fa fa-user-shield"></i></h3>
+									<div class="body">
+										<h2 class="mt-5 pt-5">QA/Security</h2>
+										<p>Keeping the peace</p>
+									</div>
+								</div>
+								<div class="event fragment fade-left" data-fragment-index="4" style="margin-top:10vh;">
+									<h3><i style="font-size:10rem;" class="fa fa-user-astronaut"></i></h3>
+									<div class="body">
+										<h2 class="mt-5 pt-5">IT Ops</h2>
+										<p>This is no toy,<br />this is live data center!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							Now, to add on top of the tech, idologies, and lifecycle - there's a cultural component as well.<br />
+							DevOps allows you to address every character on your bench<br />
+							Business who is driving the organization forward<br />
+							Security who is ensuring the dragons be kept at bay<br />
+							Your developers who just magically turn ideas into capabilities.<br />
+							And your operators who have to keep the lights on, often while the power is still flowing.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-background-color="#08130f">
+						<h1 class="pb-4">Organizational Challenges</h1>
+						<img class="img-fix-stretch stretch" src="/img/events/ossecconf2019/raw_triblock.png">
+						<aside class="notes">
+							So we've got people problems - different skill levels and silly caste systems keep things sluggish.<br />
+							My tools don't talk to your tools or systems, or the ecosystem doesn't allow interoperability.<br />
+							And then you've got your Bashers and Pythonistas who can automate their pretty faces off, but other teams while having processes that would be able to benefit from automation, have neither the resources or capabilites to do so and so things are left to manual mechanisms.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+
+						<h1 class="pb-4">A look at 2009, or 2019?</h1>
+						<div class="siloHolder">
+							<div class="siloRow">
+								<div class="silo"></div>
+								<div class="silo active">Servers</div>
+								<div class="silo active">Cloud</div>
+								<div class="silo"></div>
+								<div class="silo active">Network</div>
+								<div class="silo trans"></div>
+							</div>
+							<div class="siloRow">
+								<div class="silo trans">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo active">
+									Containers
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+							</div>
+							<div class="siloRow">
+								<div class="silo active">Security</div>
+								<div class="silo trans"></div>
+								<div class="silo active">CI/CD</div>
+								<div class="silo"></div>
+								<div class="silo active">Apps</div>
+								<div class="silo trans"></div>
+							</div>
+						</div>
+						<aside class="notes">
+							So let's touch on that right - because that's what everyone's thinking now - "I'vE bEEn auTOmAtInG mY bASh scRIPts foR yEArS!" <br />
+						</aside>
+
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+
+						<h1 class="pb-4">A look at 2009, or 2019?</h1>
+						<div class="siloHolder">
+							<div class="siloRow">
+								<div class="silo"></div>
+								<div class="silo black">Automated</div>
+								<div class="silo black">Silos</div>
+								<div class="silo"></div>
+								<div class="silo black">Are</div>
+								<div class="silo trans"></div>
+							</div>
+							<div class="siloRow">
+								<div class="silo trans">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo black">
+									STILL
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+							</div>
+							<div class="siloRow">
+								<div class="silo">wtfhax?!</div>
+								<div class="silo trans"></div>
+								<div class="silo"></div>
+								<div class="silo"></div>
+								<div class="silo black">SILOS</div>
+								<div class="silo trans"></div>
+							</div>
+						</div>
+						<aside class="notes">
+							Even if you automate your tiny machines, it does nothing to provide tangible automation to the organization - if we're being real all you're doing is just making your job easier is all.  Which is respectable, but extremely myopic.
+						</aside>
+
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-center">
+								<h3><i style="font-size:10rem;" class="fa fa-user-tie"></i></h3>
+							</div>
+							<div class="col-sm-12 col-md-6 text-center">
+								<h3><i style="font-size:10rem;" class="fa fa-user-shield"></i></h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<img class="mt-5 mb-5" alt="" width="40%" src="/img/events/devsecops/southparkfight.gif" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-center">
+								<h3><i style="font-size:10rem;" class="fa fa-user-ninja"></i></h3>
+							</div>
+							<div class="col-sm-12 col-md-6 text-center">
+								<h3><i style="font-size:10rem;" class="fa fa-user-astronaut"></i></h3>
+							</div>
+						</div>
+						<aside class="notes">
+							Woo - getting a little heated, some hot and spicy takes!  It's easy to do.  You've got the classic war between these different hats, the family feud if you will.  I wear them all so you'll find me fighting amongst myself often...
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1 class="pb-5 mb-5">The Cultural Challenges</h1>
+						<div class="row">
+							<div class="col-md-3">
+								<h3 class="text-alt">Developers</h3>
+								<ul>
+									<li>Features</li>
+									<li>Quality</li>
+									<li>Attributes</li>
+									<li>Efficiency</li>
+									<li>Performance</li>
+									<li>Users</li>
+									<li>Authentication</li>
+									<li>Authorization</li>
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<h3 class="text-alt">IT Ops/SRE</h3>
+								<ul>
+									<li>Deployment</li>
+									<li>Maintenance</li>
+									<li>Updates</li>
+									<li>Change policy</li>
+									<li>Failure</li>
+									<li>Data loss</li>
+									<li>Risk prevention</li>
+									<li>Authentication</li>
+									<li>Authorization</li>
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<h3 class="text-alt">QA/BA</h3>
+								<ul>
+									<li>Testable</li>
+									<li>Issue tracking</li>
+									<li>Bug reports</li>
+									<li>Usability</li>
+									<li>Performance</li>
+									<li>Load</li>
+									<li>MOEs</li>
+									<li>Help Desk</li>
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<h3 class="text-alt">Security/IA</h3>
+								<ul>
+									<li>Data Privacy</li>
+									<li>Intrusion detection</li>
+									<li>Threat vectors</li>
+									<li>CWEs & CVEs</li>
+									<li>Package/Artifact security</li>
+									<li>Authentication</li>
+									<li>Authorization</li>
+									<li>Security standards</li>
+									<li>Compliance</li>
+								</ul>
+							</div>
+						</div>
+						<aside class="notes">
+							So what's funny about it, once the fighting settles down and we're cheers-ing at the bar, we all say we want the same core things - right?<br />
+							We want stability, we want security, we want the assurance that we're not going to be called at 3AM when a system is down.  We want to not spend hours or days to weeks on root cause analysis, debugging, maintenance, or procurement.  Distill it down more and we all just want to go home at 5 knowing we did a good days work without risk of a fire as soon as you turn your back.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row text-center" style="width:114%">
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-right pb-4 pt-4 pl-4 pr-4 mt-5">
+									<h4 class="text-trans-initial">It takes weeks for an environment to get delivered.</h4>
+								</div>
+							</div>
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-left pb-4 pt-4 pl-4 pr-4">
+									<h4 class="text-trans-initial">The application behaves differently in production than it did in test.</h4>
+								</div>
+							</div>
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-left pb-4 pt-4 pl-4 pr-4 mt-5">
+									<h4 class="text-trans-initial">I don't have enough environments to perform testing.</h4>
+								</div>
+							</div>
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-right pb-4 pt-4 pl-4 pr-4 mt-5" style="margin-top:7rem !important;">
+									<h4 class="text-trans-initial">Deployments are manual, painful, and infrequent.</h4>
+								</div>
+							</div>
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-left pb-4 pt-4 pl-4 pr-4 mt-5" style="margin-top:5rem !important;">
+									<h4 class="text-trans-initial">We have no idea what is the current state of machines.</h4>
+								</div>
+							</div>
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-left pb-4 pt-4 pl-4 pr-4 mt-5" style="margin-top:7rem !important;">
+									<h4 class="text-trans-initial">Each environment has a different set of configurations to manage.</h4>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="col-md-3 pl-5 pr-5">
+								<div class="event fragment mb-5 speech-bubble-to-right pb-4 pt-4 pl-4 pr-4 mt-5">
+									<h4 class="text-trans-initial">We have a proliferation of technologies we have to manage.</h4>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							So when polling and canvasing for problems we find some commonalities.<br />
+							Things take too long, don't have enough room to work in, lots of manual work, things are hard to manage, checks and stamps to get along the way are hard to get, and no one *really* knows what's going on.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1 class="mb-5 pb-5">The Problem</h1>
+						<div class="row">
+							<div class="col-sm-12 col-md-5 text-center">
+								<h3><i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-ninja"></i>
+								<i style="font-size:10rem;" class="fa fa-user-ninja"></i>
+								<i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-ninja"></i></h3>
+
+								<h3>Developers</h3>
+							</div>
+							<div class="col-sm-12 col-md-2 text-center">
+								<h3 class="fragment event"><i style="font-size:10rem;position:relative;top:-2rem;" class="fas fa-dumpster-fire"></i></h3>
+							</div>
+							<div class="col-sm-12 col-md-5 text-center">
+								<h3><i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-astronaut"></i>
+								<i style="font-size:10rem;" class="fa fa-user-astronaut"></i>
+								<i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-astronaut"></i></h3>
+
+								<h3>IT Operations</h3>
+							</div>
+						</div>
+						<aside class="notes">
+							Alright - so let's call a spade a spade and just say it.  Relations betwen developers and operators, the classic romeo and juliette, is a dumpster fire.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-background="/img/events/devsecops/silos.png">
+						<aside class="notes">
+							So this is what we're used to - silos everywhere, throwing things over the wall, hoping it gets to the other side all right and proper with no problems.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<img alt="worked fine in dev" src="/img/events/devsecops/devops-Failure.jpg" style="width:60%" />
+						<aside class="notes">
+							So what happens when a developer ships an application that works on theirs and their cohorts workstations but not in Staging and Production?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<img alt="worked fine in dev" src="/img/events/devsecops/WTF_internal.jpg" style="width:60%" />
+						<aside class="notes">
+							Your poor Operators have such a complex stack to administer, they don't have time to understand the intricacies of every application deployed - it's not their job to.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-left">
+								<h3 class="text-trans-initial mt-5 pt-5">Applications require complicated installation and integration every time they are deployed leading to:</h3>
+								<ul class="pt-5 mt-5">
+									<li><h4 class="text-trans-initial">Slow service delivery</h4></li>
+									<li><h4 class="text-trans-initial">Reduced service quality</h4></li>
+									<li><h4 class="text-trans-initial">Frequent down times</h4></li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<img class="img-fix-stretch stretch" alt="baggage" src="/img/events/devsecops/undraw_logistics_x4dc.svg" style="width:100%" />
+							</div>
+						</div>
+
+						<aside class="notes">
+							We're gonna boil all the water outta this DevOps lake - if we reduce it down more, a lot of our pains go to the issues in delivering applications, reliability, and management.
+						</aside>
+
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/standardizeOptimizeAutomate.png">
+						<aside class="notes">
+							So if you've ever worked on American AND Import cars you know the pain in having to have two different tool sets - metrics or SAE/imperial.<br />
+							The 3 pillars of DevSecOps is to Standardize, Optimize, and Automate.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1 class="pb-5 mb-5">Key objectives of this approach</h1>
+						<div class="row">
+							<div class="col-sm-12 col-md-3 events fragment" style="margin-left:2% !important">
+								<h2 class="alt-text text-alt pt-5 pb-5 pl-5 pr-5" style="width:100%;margin-bottom:0;">Standardize</h2>
+								<blockquote class="pt-5 pb-5 pl-5 pr-5" style="width:100%;margin:0 auto;">
+									Adopt practices of<br />
+									<strong>secure by default</strong>
+								</blockquote>
+							</div>
+							<div class="col-sm-12 col-md-3 events fragment" style="margin-left:8% !important">
+								<h2 class="alt-text text-alt pt-5 pb-5 pl-5 pr-5" style="width:100%;margin-bottom:0;">Optimize</h2>
+								<blockquote class="pt-5 pb-5 pl-5 pr-5" style="width:100%;margin:0 auto;">
+									Increase the <strong>speed</strong> of
+									delivering applications to provide mission capability
+								</blockquote>
+							</div>
+							<div class="col-sm-12 col-md-3 events fragment" style="margin-left:8% !important">
+								<h2 class="alt-text text-alt pt-5 pb-5 pl-5 pr-5" style="width:100%;margin-bottom:0;">Automate</h2>
+								<blockquote class="pt-5 pb-5 pl-5 pr-5" style="width:100%;margin:0 auto;">
+									Increase the <strong>quality and consistency</strong> of application delivery using standardization
+									<strong>secure by default</strong>
+								</blockquote>
+							</div>
+						</div>
+						<aside class="notes">
+							Let's standardize our stack as much as we can - standardization is one of the key components of increasing your overall security posture.<br />
+							You can't rest on your laurels - gotta set up a feedback system.  Positive and negative feed back.<br />
+							And we're not just automating because it makes things fast and easy - humans suck.  We're very failable, we make mistakes, see things wrong - automation helps keep that finicky human element from messing with my pretty system to a minimum.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-left">
+								<h3 class="text-trans-initial mt-5 pt-5">Adopting a container strategy will allow applications to be easily shared and deployed</h3>
+								<ul class="pt-5 mt-5">
+									<li><h4 class="text-trans-initial">Consistent environments and tools</h4></li>
+									<li><h4 class="text-trans-initial">Predictable building blocks</h4></li>
+									<li><h4 class="text-trans-initial">Faster deployment</h4></li>
+								</ul>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<img class="img-fix-stretch stretch" alt="baggage" src="/img/events/devsecops/undraw_Container_ship_ok1c.svg" style="width:100%" />
+							</div>
+						</div>
+
+						<aside class="notes">
+							Another thing we need to do is modernize around containerized workflows.  There's the running joke that the "works on my box" problem was solved because Docker came along and said "ok, let's ship your box" and BOOM we're shipping skinny VMs...but that even provides a lot of value, even as a sort of joke.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1 class="mb-5 pb-5">The Solution</h1>
+						<div class="row">
+							<div class="col-sm-12 col-md-5 text-center">
+								<h3><i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-ninja"></i>
+								<i style="font-size:10rem;" class="fa fa-user-ninja"></i>
+								<i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-ninja"></i></h3>
+
+								<h3>Developers</h3>
+							</div>
+							<div class="col-sm-12 col-md-2 text-center">
+								<h3 class="fragment event"><i style="font-size:10rem;position:relative;top:-2rem;font-weight:normal;" class="fab fa-docker text-alt"></i></h3>
+								<h3 class="fragment event"><i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-glass-cheers"></i></h3>
+							</div>
+							<div class="col-sm-12 col-md-5 text-center">
+								<h3><i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-astronaut"></i>
+								<i style="font-size:10rem;" class="fa fa-user-astronaut"></i>
+								<i style="font-size:10rem;position:relative;top:-2rem;" class="fa fa-user-astronaut"></i></h3>
+
+								<h3>IT Operations</h3>
+							</div>
+						</div>
+						<aside class="notes">
+							Hey, well I've heard of this containers and Docker thing, that's supposed to be the solution to all our problems right, Developers and Operators singing koombaya, cats and dogs living together, mass hysteria - ahem. No, but containers are an important part of our solution.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/whatareContainers.png">
+						<aside class="notes">
+							So what is a container?  It depends on who you ask.<br />
+							If you ask an operator, they'll probably look at it like a tiny VM - which is not wrong, but not entirely right.<br />
+							On the developer side of the house, it's a very nice and safe way to deploy their application in a format that can then be deployed and run anywhere with little worry over portability or compatibility - no more "works on my box" problem.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h2 class="mb-5 pb-5">Virtual Machines and Containers</h2>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-center">
+								<img src="/img/events/devsecops/vmArch.png" alt="" class="img-fix-stretch stretch" />
+								<h4>VM isolates the hardware</h4>
+							</div>
+							<div class="col-sm-12 col-md-6 text-center">
+								<img src="/img/events/devsecops/containerArch.png" alt="" class="img-fix-stretch stretch" />
+								<h4>Container isolates the process</h4>
+							</div>
+						</div>
+						<aside class="notes">
+							On the infrastructure side, if you look at deployment and density options provided by containers compared to VMs, instead of recreating unique hardware, kernel address, resources, etc for each machine, containers share a host kernel - can be bare metal or a VM, but otherwise the isolation is provided closer to the application layer.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h2 class="mb-5 pb-5">Virtual Machines and Containers</h2>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-center">
+								<img src="/img/events/devsecops/vmSingle.png" alt="" class="img-fix-stretch stretch" />
+								<div class="text-left" style="margin:0 auto;width: fit-content;">
+									<p><i class="fa fa-plus mr-4" style="color:green"></i> VM Isolation</p>
+									<p><i class="fa fa-minus mr-4" style="color:red"></i> Complete OS</p>
+									<p><i class="fa fa-minus mr-4" style="color:red"></i> Static Compute</p>
+									<p><i class="fa fa-minus mr-4" style="color:red"></i> Static Memory</p>
+									<p><i class="fa fa-minus mr-4" style="color:red"></i> High Resource Usage</p>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 text-center">
+								<img src="/img/events/devsecops/containerSingle.png" alt="" class="img-fix-stretch stretch" />
+								<div class="text-left" style="margin:0 auto;width: fit-content;">
+									<p><i class="fa fa-plus mr-4" style="color:green"></i> Container Isolation</p>
+									<p><i class="fa fa-plus mr-4" style="color:green"></i> Shared Kernel</p>
+									<p><i class="fa fa-plus mr-4" style="color:green"></i> Burstable Compute</p>
+									<p><i class="fa fa-plus mr-4" style="color:green"></i> Burstable Memory</p>
+									<p><i class="fa fa-plus mr-4" style="color:green"></i> Low Resource Usage</p>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							Now, I know what you're thinking - "oh no!  it took nearly a decade for the DoD to get on-board with virtualization at large, now we have to get rid of it?".  No - VMs aren't going anywhere, they're here to stay but many workloads find better benefits in a container.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="fade" data-background="/img/events/devsecops/history1.png">
+						<aside class="notes">
+							Containers aren't really a new thing btw - modern containers just provide clean and user friendly interfaces to system-calls and kernel functions that date back decades.<br />
+							If you've ever set up many popular daemons in secure contexts you're familar with chroots and other key filesystem and process isolation functions that allow containers to do what they do.<br />
+							We did see an explosion in popularity though...
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="fade" data-background="/img/events/devsecops/timeline2.png">
+						<aside class="notes">
+							A few years ago we saw a rapid acceleration in the container eco-system made by these new user friendly and open-source interfaces.  So in short time the open-source community has revolutionized how IT operates - just as we now by default build for an accessible and responsive mobile-first web, we're seeing more container-first solutions in a very short amount of time.  That eye chart of logos from earlier didn't exist a few years ago...
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<code>$ docker build -t app:v1 .</code>
+
+						<aside class="notes">
+							Wanna do this here containers thing?  Great - very easy to build your own container.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<code>$ docker build -t app:v1 .</code><br />
+						<code>$ docker run app:v1</code>
+
+						<aside class="notes">
+							Well gee, how do I run it?  Glad you asked, becareful - the command looks very similar and just as simple!
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<h2>Containerized Apps<br /> on Docker Hub</h2>
+								<h1 style="font-size:15rem;" class="text-alt">2.5M</h1>
+							</div>
+							<div class='col-sm-12 col-md-6'>
+								<h2>Image Pulls<br /> on Docker Hub</h2>
+								<h1 style="font-size:15rem;" class="text-alt">25B</h1>
+							</div>
+						</div>
+
+						<aside class="notes">
+							Say you don't wanna build your own container and trust strangers on the internet for the foundational components of everything you're about to do - plenty of options to choose from!
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<h2>Container Adoption Rate<br />in Production</h2>
+								<h1 style="font-size:15rem;" class="text-alt">35%</h1>
+							</div>
+							<div class='col-sm-12 col-md-6 fragment events'>
+								<img alt="worked fine in dev" src="/img/events/devsecops/mindexplosion.gif" style="width:70%" />
+							</div>
+						</div>
+
+						<aside class="notes">
+							Now even though it's popular, easy, and there are plenty of "resources" out there, not too many organizations are running containers in production which at this point might be a little mind blowing.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<h1 class="mt-5 pt-5">&nbsp;<br />DevOps with<br /><span style="text-decoration: underline">A Single</span><br />Container</h1>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<img src="/img/events/devsecops/undraw_good_team_m7uu.svg" alt="" class="img-fix-stretch stretch" />
+							</div>
+						</div>
+
+						<aside class="notes">
+							So DevOps with a single container is fun, and happy go-lucky, you feel real good, not too hard.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div style="width:fit-content;margin:0 auto;" class="text-left">
+							<code>$ docker build -t app/frontend:v1 .</code><br />
+							<code>$ docker build -t app/backend:v1 .</code><br />
+							<code>$ docker build -t app/database:v1 .</code><br />
+							<code>$ docker build -t app/cache:v1 .</code><br />
+							<code>$ docker build -t app/messaging:v1 .</code><br />
+						</div>
+
+						<aside class="notes">
+							What happens when your application is something more complicated than a WordPress blog?  Ok, not too bad, we can wrap this in a bash script, right?!
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div style="width:fit-content;margin:0 auto;" class="text-left">
+							<code>$ docker run app/frontend:v1 <span style="color:grey">link-to-backend</span></code><br />
+							<code>$ docker run app/frontend:v1 <span style="color:grey">link-to-backend</span></code><br />
+							<code>$ docker run app/backend:v1 <span style="color:grey">link-to-db-cache-messaging</span></code><br />
+							<code>$ docker run app/backend:v1 <span style="color:grey">link-to-db-cache-messaging</span></code><br />
+							<code>$ docker run app/database:v1</code><br />
+							<code>$ docker run app/cache:v1 <span style="color:grey">link-to-db</span></code><br />
+							<code>$ docker run app/messaging:v1</code>
+						</div>
+
+						<aside class="notes">
+							Yeah, sure, go ahead and knock yourself out, but  you'll find that it gets to be a bit cumbersome - especially running them in secure contexts.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<h1 class="mt-5 pt-5">DevOps with<br /><span style="text-decoration: underline">Many</span><br />Containers<br />Is hard</h1>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<img src="/img/events/devsecops/undraw_building_blocks_n0nc.svg" alt="" class="img-fix-stretch stretch" />
+							</div>
+						</div>
+
+						<aside class="notes">
+							So when you're building scalable applications and microservices that comprise of multiple containers, you run into problems.  Running this stuff together, outside of your developer laptop, takes some work.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1 class="pb-5">We need more than just containers</h1>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-left">
+								<h3 class="text-alt">Scheduling</h3>
+								<p>Decide where to deploy containers</p>
+								<h3 class="mt-5 text-alt">Lifecycle and Health</h3>
+								<p>Keep containers running despite failures</p>
+								<h3 class="mt-5 text-alt">Discovery</h3>
+								<p>Find other containers on the network</p>
+								<h3 class="mt-5 text-alt">Monitoring</h3>
+								<p>Visiblity into running containers</p>
+							</div>
+							<div class="col-sm-12 col-md-6 text-right">
+								<h3 class="text-alt">Security</h3>
+								<p>Control who can do what</p>
+								<h3 class="mt-5 text-alt">Scaling</h3>
+								<p>Scale containers up and down</p>
+								<h3 class="mt-5 text-alt">Persistence</h3>
+								<p>Survive data beyond container lifecycle</p>
+								<h3 class="mt-5 text-alt">Aggregation</h3>
+								<p>Compose apps from multiple containers</p>
+							</div>
+						</div>
+
+						<aside class="notes">
+							So, I lied - containers aren't the end all be all solution and key to DevOps - we actually need a bit more.  How do we run these containers at scale, how do we get insight into what's running, health, security, volume management, and so on.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#F1f1f1">
+						<div class="fragment events">
+							<img src="/img/events/devsecops/Kubernetes.png" style="width:30%" class="img-fix-stretch stretch" alt="" />
+						</div>
+						<div class="fragment events">
+							<h2 class="text-alt">Kubernetes</h2>
+							<h5>Oh Captain, My Captain!</h5>
+						</div>
+
+						<aside class="notes">
+							So this is one of my favorite parts - Kubernetes. I'm sure you've all heard of it, only the most popular project out there right now.<br />
+							Hey Ben, have you ever talked to someone who's deployed or managed their own Kubernetes cluster?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#F1f1f1">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-left">
+								<h2 class='text-trans-initial'>&nbsp;<br />Kubernetes is an Open-Source system for automating deployment, operations, and scaling of containerized applications accross multiple hosts</h2>
+							</div>
+							<div class="col-sm-12 col-md-6 text-center">
+								<img src="/img/events/devsecops/Kubernetes.png" style="width:50%" class="img-fix-stretch stretch" alt="" />
+									<h2>Kubernetes</h2>
+							</div>
+						</div>
+
+						<aside class="notes">
+							So what is this Kubernetes thing?  It's an open-source project originated at Google that is used to orchestrate and operate containers at scale.  Hmm, that sounds like just the cure for what ails us!
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8s.png">
+						<aside class="notes">
+							The idea behind K8s is that it will take your container workloads that have been declaritively described and run them amongst a cluster of compute.  It can help do some basic connecting of containers with an internal DNS service, and it's all based on a REST API which makes interacting with this container platform very easy.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8s2.png">
+						<aside class="notes">
+							Naturally fits into a DevOps lifecycle, developer submits code, CI/CD engine pushes out a container, Kubernetes runs your containers on your hardware!  Sweet!
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8sNetworking.png">
+						<aside class="notes">
+							Well, before we call it a day, we still need some internal networking for nodes and container pods to address each other. Ok, no problem.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8sRegistry.png">
+						<aside class="notes">
+							Well, we need somewhere to store the images we built, or proxy them so we're not pulling from external resources over the WAN every time for every container...ok, that shouldn't be hard to integrate, right?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8sMetrics.png">
+						<aside class="notes">
+							Oops, don't forget we need to do the DevOps-y thing and get some feedback and metrics into what's going on.  How are we to know the container hasn't entered a CrashLoop state?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8sLifecycle.png">
+						<aside class="notes">
+							What happens when it does enter a CrashLoop state?  How do you manage that lifecycle, and the lifecycle of scalaing and rolling deployments?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8sDBMess.png">
+						<aside class="notes">
+							Now at this point we're building integrations and so we need our own application services to glue all this together, yay we're building systems to run systems...
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/k8sSelfService.png">
+						<aside class="notes">
+							And this is going to be a user friendly platform with a nice WebUI and documented APIs, right?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="slide" data-background-color="#F1f1f1">
+						<div class="row">
+							<div class="col-sm-12">
+								<h1>But wait! There's more!</h1>
+								<img alt="" src="/img/events/devsecops/needMorek8s.png" class="img-fix-stretch stretch" style="width:75%" >
+							</div>
+						</div>
+						<aside class="notes">
+							HA HA!  And they said Kubernetes was gonna be fun, they said it was gonna change my life...I'm pretty sure Kubernetes has given my more grey hair than anything else in my recent years...so as you start to operate K8s clusters you find that you have to add a lot of extra components to make it usable and to fluidly deploy your workloads.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="slide" data-background-color="#F1f1f1">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-left">
+								<h2 class='text-trans-initial mt-5 pt-5'>&nbsp;<br />Container application platform based on Docker and Kubernetes for building, distributing, and running containers at scale</h2>
+							</div>
+							<div class="col-sm-12 col-md-6 text-right">
+								<img src="/img/events/devsecops/redhatopeshift.png" style="width:70%" class="img-fix-stretch stretch" alt="" />
+							</div>
+						</div>
+						<aside class="notes">
+							What if there was a "batteries included" approach? What if someone made a certified and supported Kubernetes offering with everything you needed?  Well, thankfully there is and that's where we hit into Red Hat's OpenShift Container Platform - my favorite container platform when I'm not masocistically operating vanilla K8s clusters.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="slide" data-background-color="#F1f1f1">
+						<div class="row">
+							<div class="col-sm-12">
+								<h2>OpenShift Is Kubernetes<br /><span class="text-alt">for the enterprise</span></h2>
+								<img alt="" src="/img/events/devsecops/lifecycleocp.png" class="img-fix-stretch stretch" style="width:55%" >
+								<p class='text-center'>
+									Security fixes<br />
+									100s of defect and performance fixes<br />
+									200+ validated integrations<br />
+									Middleware integrations (Images, storage, networking, cloud services, etc)<br />
+									9 Year Enterprise Lifecycle Management<br />
+									Certified Kubernetes
+								</p>
+							</div>
+						</div>
+						<aside class="notes">
+							The idea behind OCP is that they take the upstream Kubernetes project, apply security contexts, integrations such as a registry, networking, routing, cloud integrations and more - all wrapped in a supported enterprise lifecycle.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="slide-in slide-out" data-background-color="#F1f1f1">
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<img src="/img/events/devsecops/ocpk8scompare.png" style="width:90%" class="img-fix-stretch stretch" alt="" />
+								<small><strong>* OKD</strong> - Community distribution of Kubernetes</small>
+							</div>
+						</div>
+						<aside class="notes">
+							This is a quick comparison of some of the things that OpenShift brings along to the Kubernetes platform, a quick hits of a set of key value adds that help you get up and running very quickly.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide-in fade-out" data-background="/img/events/devsecops/openshiftEco.png">
+						<aside class="notes">
+							We've got a customer who has a goal to hit by 2020 of 80% of their non-critical systems deployed in the cloud as containers.  To be honest, at first we all kind of laughed because it's kind of an audacious goal but with Red Hat's OpenShift Container Platform we've made really great work towards that goal and it's actually now an attainable goal because of how easy, secure, and scalable OCP makes K8s not just for your developers but also for your operators.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#FFF">
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/nochicken.gif" style="width:30%" alt="" />
+						</div>
+						<aside class="notes">
+							Shoot, so now we're done, we've got all we need to do DevOps, right? Yes and no, but let's take a minute to think about what we're about to do before we jump into this rocket ship.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background="/img/events/devsecops/devsecopsSSFBkg.png" data-background-size="cover">
+						<aside class="notes">
+							So something to think about DevOps when not applied with a security context - you've given your developers Ferarris on the Autobauhn with little if any training or other sort of protection to keep them from going too fast, going off the guard rails, and crashing.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Secure Software Factory</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/secureSoftwareFactory.png" alt="" />
+						</div>
+						<aside class="notes">
+							So let's jump into this Secure Software Factory here - starting down under, at the foundation we've got Ansible deploying and configuring our infrastructure and core systems.  Not only that, but thanks to our partner MindPoint Group and their Enterprise Lockdown offering, we have delicious automated STIG magic.<br />
+							Our infrastructure can be anywhere - our demo later is keeping things cloud-native and we're playing with the 800lb Gorilla in the room by running on AWS.<br />
+							OCP is what powers our container platform - but to this point it doesn't too much matter.<br />
+							This is a platform of broken dreams so far, what you need is centralized and managed repositories for artifacts, code, and containers and the right pipeline that can scale and carry your application through Static Code Testing, Software Composition Analysis, Container Security, Context reporting, and Dynamic application testing while in operation - just to name a few key considerations.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>How does Security fit?</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/devopsnsec.png" alt="" />
+						</div>
+						<aside class="notes">
+							So we figured out DevOps, and we just work with Security when the time right, keep throwing things over the wall - sure if you want all your efforts to be in vain.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Security encompasses,<br />not intersects</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/encompassSec.png" alt="" />
+						</div>
+						<aside class="notes">
+							So we're not thinking of security in DevOps as a here and there thing, it has to be along for the ride every step of the way.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>We've been Chasing Waterfalls...</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNow.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							So say you do this DevOps thing - your lifecycle might look like this.  Planning, development, testing and review, deployment, more review, and a hand off.  Your security gate is usually close to the end...what if instead of it being a judmental toll booth, we eat this security elephant one bite at a time...
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>What does that look like?</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowSecureDevOpsLifecycle.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							So how do you break security into your day to day, just dump them in the same Slack Channel as the DevOps folk, right?  Sure, but let's take the notion of moving these later security stages and shifting them left.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Shift Security Left</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowInception.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							So we start shifting these security steps left, documenting all along the way.  Starting at the inception of the program or system, you're determining viability and threat parameters.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Secure Baselines</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowHardened.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							As we're compiling the program and system documentation with the targeted security context in mind already, we can start to define the constraints of our environments and the required security scopes.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>What does secure mean to you?</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/secureRegulations.png" alt="" style="width:90%" />
+						</div>
+						<aside class="notes">
+							This can vary widely, not just betwen programs and systems but environments, operational regions, and more.  These security specifications are guidelines and best practices defined for particular industries and organizations.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<div class="row">
+							<div class="col-sm-12 col-md-6 text-left">
+								<h2 class='text-trans-initial mt-5 pt-5'>Today, MindPoint Group’s government and corporate clients rely on our world-class team of cyber security specialists in order to adapt strategically to an increasingly hostile digital world.</h2>
+							</div>
+							<div class="col-sm-12 col-md-6 text-right">
+								<img src="/img/global/vendor_logos/MPG-Logo-White.png" style="width:70%;margin-top:10rem;" class="img-fix-stretch stretch" alt="" />
+							</div>
+						</div>
+						<aside class="notes">
+							MPG is how more and more of our customers get these NIST specs and DISA STIGs not only set up and deployed, but managed and documented.<br />
+							Again, a key part of a Secure Software Factory is automation and MPG's Enterprise Lockdown can help you get to compliance requirements very quickly.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#1a2950">
+						<h1>Security Inheritance Model</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/inheritanceModel.png" alt="" style="width:80%" />
+						</div>
+						<aside class="notes">
+							Now that we have our base-line security and infrastructure architecture documented and agreed upon, when operating in containers we benefit from the security inheritance model offered by these process isolation mechanisms.  So by standardizing on a container platform your security postures have a much better base-line.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Only approved elements</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowSecureElements.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							So now we're building, we're pushing code, pulling in dependancies and software components - do you really want to rely on Docker Hub?  on the Node Registry?  Gotta consider the software supply chain or else you gonna end up having a baaaad time.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Automate What You Can</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowCodeReview.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							Now we're reviewing changes - this is where GitOps comes in, integration into your Git repositories to do automated review can save you considerable time, but this relies heavily on a fluid feedback and heuristic system.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Don't waste compute or time</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowCITesting.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							As we're building new features and delivering on capabilities, we're building tests for these new functions and their integrations right?  This is where code complexity can easily turn into heaps of technical debt if you're not careful.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>What gets measured gets improved</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowQAITesting.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							As we're deploying and doing additional review and testing, don't forget to integrate security tests and automate what you can.  I'm sure your Red Team has a dozen scripts to test inputs for SQL Injections, Cross Site, and other weaponized payloads that could be introduced into your CI/CD pipeline with a bit of automation magic...
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Automate, build trust, and iterate</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowTransition.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							At this point, we should have a mountain of documentation - but we're also at the finish line in much better shape than we normally would be.<br />
+							Now, the good program managers at this point would want to find a way to take their Splunk data that's reporting on the operation of this system and feed it back for continuous monitoring.  This will benefit not only this system but the shared intelligence will be of aid to other pipelines as well.
+						</aside>
+					</section>
+
+					<section data-background-transition="zoom" data-transition="zoom" data-background="/img/events/devsecops/codeToCommit.png">
+						<aside class="notes">
+							Oooo, now we're closer to that DevSecOps pipeline where you can deploy much faster because we have optics into inception, modification, origin, providence, security, and more.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#f1f1f1">
+						<h1>Wait...approved elements?</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/lifecycleNowSecureElements.png" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							So let's touch on this step, something in the middle that often gets over-looked - where do your software components come from?  What's really in them?  Are there vulnerabilities associated with the dozens of dependencies you're pulling in from public resources?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+					</section>
+
+					<section data-background-transition="zoom" data-transition="zoom" data-background="/img/events/devsecops/sonatypeBkg_Page_04.png">
+						<aside class="notes">
+							There's an extremely popular Java cryptography library, BouncyCastle.  Funny thing - there have been multiple versions of this cryptography library with CVE scores of 10 over the last decade+ and vulnerable versions are STILL in use and being pulled to this day...may be even by your organization?  But of course, you don't do open source, and if you did you'd know about it...right?
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background-transition="zoom" data-transition="zoom" data-background="/img/events/devsecops/sonatypeBkg_Page_37.png">
+						<aside class="notes">
+							So now we're getting into one of the key considerations and components of our DevSecOps pipeline with Sonatype.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/sonatypeBkg_Page_03.png">
+						<aside class="notes">
+							If you've done anything with Java you've benefitted from Sonatype's work already.  They've got millions of users around the globe, and have been the creators and operatorsof Maven Central, the largest Java repository in the world.<br />
+							Needless to say, these folk know a thing or two about scalable repositories and offer the Nexus Repository Manager, and have security researchers on staff to provide extra value to the components and libraries that they manage and provide for the community.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/sonatypeBkg_Page_05.png">
+						<aside class="notes">
+							So, think about this, a few questions for you - if I asked you to produce a list of all the components and dependencies an application or system uses, could you?<br />
+							What about for all your applications and systems?  Do you know where it comes from and do you have any way to control and manage that?<br />
+							What are the embedded and assumed licenses applied by this stack of software?<br />
+							Can you apply policies to prevent non-approved components at scale, and in an automated fashion as delivered by these Secure Software Factories?
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-transition="slide" data-background="/img/events/devsecops/sonatypeBkg_Page_11.png">
+						<aside class="notes">
+							To touch on the product suite offered by Sonatype, many of which we'll see in a few moments during the demo - the defacto starting point, Nexus Repository.<br />
+							Quickly proxy and manage your incoming software components and store generated artifacts all in one repository.<br />
+							So say you want to block repositories, components, authors, or set a policy on where/what/how, Nexus Firewall gives you that control and Nexus Lifecycle and help provide the intelligence you need to create those policies and standard practices.<br />
+							Not only key in application modernization but also for better communication with your Security teams, Nexus Auditor allows you to examine the composition of an application and will produce you a Bill of Materials for your application.<br />
+							This all kinda helps with the questions I asked earlier.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>We've got issues</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/fe05ad75e80b8eb31f82c1163166055325dd46a19e34189f203bcde760436485.jpg" alt="" style="width:40%" />
+						</div>
+						<aside class="notes">
+							Alright, we've got an all-star team, the tech and tools, the processes, but let's hit on a few issues our customers in the Public Sector face.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>New tools for a new day</h1>
+						<div class="text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/wrong-tool-.jpg" alt="" style="width:40%" />
+						</div>
+						<aside class="notes">
+							So it took a while to get some PS entities on board with Virtualization...you're going to require addition investment in not only the platform and tools but documentation, enablment, training and so on because the tools we're use to that manage less contemporary system don't really translate to these new containers and microservices.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>nu system, who dis?</h1>
+						<div class="text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/38x6zt.jpg" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							Our PS customers also have some special requirements - not just hardware and software pecularities but we also have to think on how and if some of these legacy systems can be migrated and modernized and how do they fit in this DevSecOps context?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>It's complicated</h1>
+						<div class="text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/Always-Sunny-Conspiracy-Wall.jpg" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							Another problem we're facing is that these modern stacks are complicated in numerous ways, and require new skills in different tools.  Program Managers are wary that these complex predominantly open-source stacks will be left to wither to time, but I'd argue that Kubernetes is here to stay, OpenShift is here to stay - in today's volitile and fast paced competitive times your bet is better with the enterprise-backed open-source community than some of these boutique organizations.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Stranger Danger</h1>
+						<div class="text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/final_5c11661f32962c0013aa6d07.jpg" alt="" style="width:60%" />
+						</div>
+						<aside class="notes">
+							Program Managers are also taking into the consideration that new DevOps practices enable scalable agility and that can either by orchestrated well to propel your mission, or be the crippling blow to your achillies.  Now say you pull it off, got everyone on Slack and Git, set up managed CloudBees Core, how do you set compliance and manage policies to components being pulled in in your scalable automated fancy schmancy pipeline?
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-transition="fade" data-background-color="#08130f">
+						<h1>Secure Software Factory</h1>
+						<div class="fragment events text-center">
+							<img class="img-fix-stretch stretch" src="/img/events/devsecops/secureSoftwareFactory.png" alt="" />
+						</div>
+					</section>
+
+					<section data-background-transition="zoom" data-transition="zoom" data-background="/img/events/devsecops/sweating.gif">
+						<h1 class="alt-text text-right pr-5 pt-5 pb-5 mb-5" style="position:relative;top:-14rem;">Demo Time</h1>
+					</section>
+
+
+				</section>
+
+
+
+				<!--
+
+				<section data-background="/img/global/backgrounds/sky-828648_1920-min.jpg" data-background-size="cover">
+					<h1 class="text-shadow">"There's a digital revolution taking place both in and out of government in favor of open-sourced data, innovation, and collaboration."</h1>
+					<h3>Kathleen Sebelius, Former United States Secretary of Health and Human Services</h3>
+					<aside class="notes">
+						And there are some powerful changes around Big Data, Data Analytics, and Data Science.<br />
+						These changes can either produce a better more cohesive experience, or drive devistating division.<br />
+						Whether you're a nation state, a flush large enterprise, or a resource-strapped organization, data will either make or break you.<br />
+						As government organizations modernize we can expect new initiatives and legislation to help push agencies along their mandates.<br />
+					</aside>
+				</section>
+
+				<section data-background="/img/global/backgrounds/sky-828648_1920-min.jpg" data-background-size="cover">
+					<h1 class="text-shadow">Federal Agencies have an OPEN Data Requirement</h1>
+					<aside class="notes">
+						One such piece of legislation that was made law earlier in 2019 is the OPEN Government Data Act.<br />
+						This bill requires that all non-sensitive government data be made available in machine-readable formats by default.  Agencies are now called upon to maintain comprehensive data catalogs and designate a nonpolitical chief data officer.<br />
+						It's no longer a question of "Do we do Data?" and now more of a mission of "How do we handle our Data?" and that's a much larger question and quandry to unwrap than first meets the eye.
+					</aside>
+				</section>
+
+				<section>
+					<h1 class="text-alt">Agenda</h1>
+					<p>&nbsp;</p>
+					<ol>
+						<li class="mb-3 mt-3 text-alt"><h3>Evolution of Enterprise Data</h3></li>
+						<li class="mb-3 mt-3"><h3>Say "Hello" to the new Cloudera</h3></li>
+						<li class="mb-3 mt-3 text-alt"><h3>Product and Engineering Roadmap</h3></li>
+						<li class="mb-3 mt-3"><h3>Cloudera in your organization</h3></li>
+						<li class="mb-3 mt-3"><h3>Next Steps - How to get started</h3></li>
+					</ol>
+					<aside class="notes">
+						Before we get too deep into the esoteric-nature of life, love, and data, we'll take a look at how some of this all started.<br />
+						Since IT Modernization has been driven hand-in-hand with Data Management, we'll see how things have changed over the years, including a recent change from Hortonworks and Cloudera.<br />
+						We'll take you through a peak into what's in store with Cloudera's Enterprise Data Cloud platform, how it affects you, and what your next steps are.
+					</aside>
+				</section>
+
+				<section>
+					<section data-background-color="#65c2cb">
+						<h1>Hadoop</h1>
+						<h2 class="alt-text text-white pt-3 pb-3">A History</h2>
+						<aside class="notes">
+							In order to know how we got to where we are today, we should take a brief look back at how the Hadoop ecosystem was planted and grew.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#65c2cb">
+						<img class="img-fix-stretch stretch" src="/img/events/cloudera_webinar/0_ecwCzdaur3JBTSr1.png" />
+						<aside class="notes">
+							Most think of Hadoop and this Yellow Elephant pops into their head.<br />
+							The next thought usually goes to "something something big databases" however Hadoop is much more than a solution to the limitations of traditional Relational Databases.<br />
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#65c2cb">
+						<div class="timeline-container timeline-vertical">
+							<div class="left">
+								<div class="event fragment fade-right" style="margin-top:20vh;">
+									<h3>1997-98</h3>
+									<div class="body">
+										<h2>Lucene</h2>
+										<p>Scalable Search</p>
+										<p><em>What powers Google Searches</em></p>
+									</div>
+								</div>
+							</div>
+							<div class="middle-line">
+							</div>
+							<div class="right">
+								<div class="event fragment fade-left" style="margin-top:50vh;">
+									<h3>2001</h3>
+									<div class="body">
+										<h2>Nutch</h2>
+										<p>Crawl the whole Internet</p>
+										<p><em>How hard could it be?</em></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							The Hadoop ecosystem can trace its roots back to the early days of the Internet and everything we know and use today.<br />
+							In 1997, Doug Cutting started working on the first version of what would become Apache Lucene, a full-text search library.  It's what powers the sub-second query results that you expect from Google.  Great, with fast search, we can now inspect data.<br />
+							With the help of Mike Cafarella, Doug created what is now Apache Nutch, a crawler, spider, or otherwise a data-scraping robot.  They started to literally crawl the entire Internet, and with Lucene were able to search across everything crawled almost instantly.<br />
+							As you may assume, crawling and searching the entire Internet is a larger order.<br />
+							It was around 2002 where they started to experience scalability issues and started to design a system in software that was schemaless, durable and self-healing, and could be deployed on commodity hardware.<br />
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#65c2cb">
+						<div class="timeline-container timeline-vertical">
+							<div class="left">
+								<div class="event fragment fade-right" style="margin-top:20vh;">
+									<h3>2003</h3>
+									<div class="body">
+										<h2>GFS</h2>
+										<p>Google File System</p>
+										<p><em>Scalable FS</em></p>
+									</div>
+								</div>
+							</div>
+							<div class="middle-line">
+							</div>
+							<div class="right">
+								<div class="event fragment fade-left" style="margin-top:50vh;">
+									<h3>2004</h3>
+									<div class="body">
+										<h2>NDFS</h2>
+										<p>Nutch Distributed File System</p>
+										<p><em>GFS, but in Java!</em></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							Around this time, Google releases their specification for Google File System which solved many of the issues Doug and Mike were facing so they set to implement it in Java and thus the Nutch Distributed File System was born.<br />
+							Now that these projects could tackle the task of crawling, searching, and storing large quantities of data, there was the challenge of processing this data in a distributed fashion.  Most other solutions would transport the data to a large computational engine and then ship the results out.  At this sort of scale that was unfeasible.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#65c2cb">
+						<div class="timeline-container timeline-vertical">
+							<div class="left">
+								<div class="event fragment fade-right" data-fragment-index="1" style="margin-top:20vh;">
+									<h3>2005</h3>
+									<div class="body">
+										<h2>MapReduce</h2>
+										<p>Integrated with Nutch</p>
+									</div>
+								</div>
+								<div class="event fragment fade-right" data-fragment-index="3" style="margin-top:30vh;">
+									<h3>2007</h3>
+									<div class="body">
+										<h2>Yahoo! Hadoop</h2>
+										<p>1000-nodes in Production</p>
+									</div>
+								</div>
+							</div>
+							<div class="middle-line">
+							</div>
+							<div class="right">
+								<div class="event fragment fade-left" data-fragment-index="2" style="margin-top:40vh;">
+									<h3>2006</h3>
+									<div class="body">
+										<h2>Hadoop was born</h2>
+										<p><img src="/img/events/cloudera_webinar/Hadoop_logo.png" class="img-fix-stretch stretch" alt="Hadoop" /></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							Enter MapReduce, by Jeffery Dean and Sanjay Ghemawat (Gimma-watt).  MapReduce solved parallelization, distribution, and fault-tollerance by Mapping parts of a job to all nodes, and then Reducing slices of the work back down to the final results.<br />
+							Around this time, the different projects were moved from sub-projects of the Lucene organization, into a new Hadoop ecosystem which consisted of Hadoop Common, HDFS, and MapReduce.<br />
+							Hadoop started to pick up steam, enough to where Yahoo! (if anyone remembers them) replaced their legacy C++ based search engine with Hadoop and within 6 months were running a 1000-node cluster in production.  How could a Java program replace a robust C++ system?  Surprisingly it did so with relative ease.
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#65c2cb">
+						<div class="timeline-container timeline-vertical">
+							<div class="left">
+								<div class="event fragment fade-right" data-fragment-index="2" style="margin-top:12vh;">
+									<h3>2008</h3>
+									<div class="body" style="max-width:calc(100% - 16rem)">
+										<h2>Ecosystem Explosion</h2>
+										<p>
+											<img data-fragment-index="3" src="/img/events/cloudera_webinar/hbase_logo_with_orca_large.png" alt="HBase" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+											<img data-fragment-index="4" src="/img/events/cloudera_webinar/zookeeper-image.png" alt="Zookeeper" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+											<img data-fragment-index="5" src="/img/events/cloudera_webinar/pig-image.png" alt="Pig" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+											<img data-fragment-index="6" src="/img/events/cloudera_webinar/Apache_Hive_logo.svg.png" alt="Hive" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="middle-line">
+							</div>
+							<div class="right">
+								<div class="event fragment fade-left" data-fragment-index="1" style="margin-top:10vh;">
+									<h3>2008</h3>
+									<div class="body" style="max-width:calc(100% - 16rem)">
+										<h2>ASF Induction</h2>
+										<p><img src="/img/events/cloudera_webinar/Hadoop_logo_new.png" class="img-fix-stretch" alt="Apache Hadoop" /></p>
+									</div>
+								</div>
+								<div class="event fragment fade-left" data-fragment-index="7" style="margin-top:10vh;">
+									<h3>2008</h3>
+									<div class="body" style="max-width:calc(100% - 16rem)">
+										<p><img class="img-fix-stretch" src="/img/global/vendor_logos/Cloudera_logo_white.png" alt="Cloudera" /></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<aside class="notes">
+							Between the community and Hadoop's use in production, Hadoop was graduated to a top-level Apache Software Foundation project.<br />
+							After this, we saw an explosion of other projects submitted to be part of the Hadoop ecosystem<br />
+							<ul>
+								<li>HBase offered a natural database on top of the scalable HDFS</li>
+								<li>Zookeeper aided in coordinating the distributed systems</li>
+								<li>Yahoo contributed their Pig programming language that extended MapReduce</li>
+								<li>Facebook contributed Hive, the first incarnation of SQL on top of MapReduce</li>
+								<li>And if that weren't enought, in 2008 Cloudera was founded by Hadoop experts from BerkleyDB, Google, Facebook, and Yahoo!</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-background-transition="slide" data-background-color="#65c2cb">
+						<h1>2009</h1>
+						<img data-fragment-index="1" class="img-fix-stretch fragment fade-up" style="width:30%;margin:1%;" src="/img/events/cloudera_webinar/amazon_emr.png" alt="Amazon EMR" />
+						<img data-fragment-index="3" class="img-fix-stretch fragment fade-up mt-4" style="width:20%;margin:0 10rem 0 0;" src="/img/events/cloudera_webinar/YahooLogo.png" alt="Yahoo" /><br />
+						<img data-fragment-index="2" class="img-fix-stretch fragment fade-up mb-5" style="width:35%;margin:1%;" src="/img/events/cloudera_webinar/1200px-Hortonworks_logo.svg.png" alt="Hortonworks" />
+
+						<aside class="notes">
+							There are too many events in the history of the Hadoop ecosystem to chart through all of them at this point, but a few to make mention are:
+							<ul>
+								<li>By March 2009, Amazon was already offering MapReduce hosting, Elastic MapReduce.</li>
+								<li>In June of 2011, Hortonworks was founded by 8 Apache Hadoop Committee members from Yahoo!</li>
+								<li>By 2012, Yahoo!'s Hadoop cluster hit over 42,000 nodes, and there are over 1,200 contributors to the Hadoop projects.</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+
+					<section data-background-color="#01021a">
+						<h1>Enterprise Data</h1>
+						<h2 class="alt-text pt-3 pb-3">Big Data is a Big Deal</h2>
+						<aside class="notes">
+							Scalable data management is not a new problem, but it has grown over the years and Enterprise-ready Data Management requires even more as technology evolved.
+						</aside>
+					</section>
+
+					<section data-background-color="#65c2cb">
+						<p><img src="/img/events/cloudera_webinar/Hadoop_logo.png" class="img-fix-stretch stretch" alt="Hadoop" /></p>
+						<h1 class="alt-text text-white pt-3 pb-3">A History</h1>
+						<aside class="notes">
+							The Hadoop platform, some foundational components dating back to the late 1990s, was created to address this scalable data management problem in a cost effective way on any commodity hardware.<br />
+							Arguably it hit critical mass when a small company called Yahoo! ran a production 700-node Cluster in 2007.<br />
+							Within a few short years Cloudera and Hortonworks were founded, Amazon started offering their Elastic MapReduce service, and Yahoo!'s small cluster hit over 42,000 nodes.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/globalexpandloop.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>World-Renown</h1>
+							<h2 class="alt-text pt-3 pb-3">Growing Pains</h2>
+						</div>
+						<aside class="notes">
+							This popularly growing data platform had helped solve some issues related to cost, distribution, and scale and is used around the world, though as the deployment of enterprise data was adopted additional challenges were presented.
+						</aside>
+					</section>
+
+					<section data-background-transition="fade" data-background-color="#01021a">
+						<h1 class="pb-4">Compartmentalization</h1>
+						<div class="siloHolder">
+							<div class="siloRow">
+								<div class="silo"></div>
+								<div class="silo active">Logs</div>
+								<div class="silo active">IoT</div>
+								<div class="silo"></div>
+								<div class="silo active">Network</div>
+								<div class="silo trans"></div>
+							</div>
+							<div class="siloRow">
+								<div class="silo trans">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo active">
+									Streams
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+							</div>
+							<div class="siloRow">
+								<div class="silo active">Events</div>
+								<div class="silo trans"></div>
+								<div class="silo active">CI/CD</div>
+								<div class="silo"></div>
+								<div class="silo active">EDW</div>
+								<div class="silo trans"></div>
+							</div>
+						</div>
+						<aside class="notes">
+							As organizations started to adopt Enterprise Data practices, there was soon an issue with having many different data silos.<br />
+							Often these different silos were disconnected, housed different kind of data, and rarely was a like format.<br />
+							So what many had were snapshots of different points of data, disperate bits of insight, presented in different constructs and languages, without a way to get the value of corellating that data.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v2.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Data Integration</h1>
+							<h2 class="alt-text pt-3 pb-3">B2B, B2C, B2B2C2U</h2>
+						</div>
+						<aside class="notes">
+							As data drove more and more value and helped move IT from a cost-center to a revenue generating part of the business, integrations became mandatory.<br />
+							Not simply between different teams or systems in your organization, but interchanges between businesses helped pave the way for the hyper-aware and hyper-active capabilties that now give us the ability to know within moments of when an Amazon package has been delivered.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v5.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Data Science</h1>
+							<h2 class="alt-text pt-3 pb-3">More than just Hot Dog/Not Hot Dog</h2>
+						</div>
+						<aside class="notes">
+							With the additional integrated repositories of data and a scalable platform, analysts and scientists could now create and employ models that were previously technologically impossible.<br />
+							This science can range from predictive measures on equipment in order to perform preventative maintaince utilizing efficiency boosting factors, to social-economic patterns on a global scale, the tracking of public epidemics, exploration into the depths of the Genome, and personalization functions that improve engagement.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v3.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Data Security</h1>
+							<h2 class="alt-text pt-3 pb-3">Don't get Equifuxed</h2>
+						</div>
+						<aside class="notes">
+							Data has accelerated business and the missions of many agencies, however as the value of commodities like data increase, so does the appeal to malicious parties.<br />
+							Throughout the years, and even more so in the recent few, we've seen time and time again about an organization or agency that has been breached, and more often than not it's a case of bad Data Governance and Security instead of a dynamic exploit created by some clever hacker.<br />
+							Now, imagine the number of systems breached and the amount of data that has been exfiltrated or tampered with that hasn't been detected or reported - yet or ever.<br />
+							Organizations now more than ever have the requirement and often legal responsibility to keep their data campaigns secure.
+						</aside>
+					</section>
+
+
+					<section data-background-video="/img/events/cloudera_webinar/v4.mp4" data-background-video-loop="loop">
+						<img class="img-fix-stretch fragment fade-up" style="width:30%;margin:8%" src="/img/global/vendor_logos/Cloudera_logo_white.png" alt="Cloudera" />
+						<img class="img-fix-stretch fragment fade-up" style="width:30%;margin:8%" src="/img/global/vendor_logos/hortonworks-logo-white.png" alt="Cloudera" />
+						<aside class="notes">
+							Throughout the years, the data management ecosystem responded to these challenges.<br />
+							Cloudera put years of work into next generation sciences that enabled new forms of Machine Learning and AI.<br />
+							Hortonworks provided the development into advancing foundational technologies to produce an enterprise-ready data platform.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v4.mp4" data-background-video-loop="loop">
+						<img class="img-fix-stretch" style="width:50%;margin:8%" src="/img/global/vendor_logos/cloudera_logo_white.png" alt="Cloudera" />
+						<aside class="notes">
+							And now, thanks to the merger, the band is back together again as I like to say.  Cloudera is now unified with the most robust open-source Enterprise Data Cloud platform available to date.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section data-background-color="#293c46">
+						<img class="img-fix-stretch" style="width:50%;margin:8%" src="/img/global/vendor_logos/CLDR.webp" alt="Cloudera" />
+						<aside class="notes">
+							Now, with a fresh coat of paint and the best and brightest all under one roof, Cloudera has come out of the gate with incredible speed in order to define their unified solutions and to get them in customer hands as soon as possible.<br />
+							Cloudera is now poised to power all of your data....
+						</aside>
+					</section>
+					<section data-transition="slide-out" data-background-color="#293c46">
+						<aside class="notes">
+							 be that on-premise, or in the cloud....
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clo_edgetoai_1024x512.jpg" data-background-size="cover">
+						<aside class="notes">
+							 ...and from Edge to AI.
+						</aside>
+					</section>
+					<section data-transition="slide-out" data-background-color="#293c46">
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/newClouderaSnapshot.png" data-background-size="cover">
+						<aside class="notes">
+							 Now that Cloudera and Hortonworks have merged you have one of the largest open source companies on the planet, which means that development and innovation can be driven faster and more effectively in addition to tragectory and value being democratized by the community and customer needs.  There aren't too many other organizations that can go from bug report or enhancement request to new technologies being developed and being offered back to benefit everyone.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaTopIndustries.png" data-background-size="cover">
+						<aside class="notes">
+							 Looking at companies and organizations around the world, you can find Cloudera products almost everywhere you look from the financial sector, to medicine, and most certainly the Public Sector where the government here and abroad rely on Cloudera's expertise and ability to drive their concerns and needs around data management.
+						</aside>
+					</section>
+
+					<section data-transition="slide-out" data-background-color="#293c46">
+						<div class="row">
+							<div class="col-sm-12 text-center" style="margin-bottom:3rem">
+								<img class="img-fix-stretch" style="width:40%;margin:0%" src="/img/global/vendor_logos/CLDR.webp" alt="Cloudera" />
+								<p class="mb-5 pb-5">THE ENTERPRISE DATA CLOUD COMPANY</p>
+							</div>
+							<div class="col-sm-12 col-md-3 orange-top-border pl-5 pr-5 ml-5 mr-5 pb-5 pt-5">
+								Believe that <strong class="text-orange">data</strong> can make what is impossible today, possible tomorrow
+							</div>
+							<div class="col-sm-12 col-md-3 orange-top-border pl-5 pr-5 ml-5 mr-5 pb-5 pt-5">
+								Empower <strong class="text-orange">people</strong> to transform complex data into clear and actionable insights
+							</div>
+							<div class="col-sm-12 col-md-3 orange-top-border pl-5 pr-5 ml-5 mr-5 pb-5 pt-5">
+								Deliver an Enterprise Data Cloud for any data, anywhere, from the <strong class="text-orange">Edge to AI</strong>
+							</div>
+						</div>
+						<aside class="notes">
+							Cloudera is 100% focused on delivering the industry’s first truely seamless EDC.  They are so focused that they changed their tag line to The Enterprise Data Cloud Company with a newly honed mission.<br />
+							The EDC may be new, but Cloudera's “why” and “how” are not, & they have remained what drives their mission<br />
+							The EDC, from the Edge to AI, is what they deliver to help our customers remove barriers, gain insight, and manage their data securely.<br />
+						</aside>
+					</section>
+					<section data-transition="fade-in" data-background-color="#293c46">
+						<img class="img-fix-stretch" style="width:70%;" src="/img/events/cloudera_webinar/enterprise-data-cloud-diagram.gif" alt="Cloudera" />
+						<aside class="notes">
+							Being able to gather, transform, stream, and store everywhere, around any device, in any environment and between them is critical to efficient data campaigns.<br />
+							This capability is what's empowering people to get clear and actionable insights from complex data anywhere and makes hybrid-cloud data platforms a reality.
+						</aside>
+					</section>
+
+					<section data-transition="fade-in" data-background-color="#293c46">
+						<img class="img-fix-stretch" style="width:70%;" src="/img/events/cloudera_webinar/xenterprise-data-cloud-architecture.gif.pagespeed.ic.NlNCAqlnH4.webp" alt="Cloudera" />
+						<aside class="notes">
+							This is a simple overview of what an EDC is composed of - this is not directly representative of Cloudera's EDC which we'll get into in a moment, just some of the core competancies you must meet.<br />
+							The hybrid and multi-cloud are a challenge for most organizations no matter the workload, and the inclusion of on-premise commodity resources is difficult.<br />
+							An EDC must solve an enterprises most pressing data and analytic challenges in a streamlined fashion. Addressing real-world business problems generally requires the application of multiple analytic functions working together on the same data - it's not just one magic model running on one data set that will get you what you need. For example, autonomous vehicles require the application of both real-time data streaming and machine learning algorithms.<br />
+							Something that is absolutely critical is that an EDC has to be secure and compliant, meeting the strict data privacy, governance, data migration and metadata management demands of large enterprises across all their environments.<br />
+							Lastly, an EDC must be open.  Without an open-source baked platform you can run into vendor lock-in and limiting integrations without any way to influence and contribute to the development of what your organization needs.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaDeliverEDC.png" data-background-size="cover">
+						<aside class="notes">
+								This is what Cloudera offers TODAY – the E2AI, core capabilities for the EDC.<br />
+								Cloudera addresses all of the key elements of an EDC today – multi-function analytics, hybrid and multi cloud deployments and interoperability, secure, governed, and open.<br />
+								As the product lines between the Hortonworks and Cloudera portfolio merge, we're seeing even deeper and more powerful integrations between these components and systems.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBkg.png" data-background-size="cover">
+						<h1>Cloudera DataFlow</h1>
+						<aside class="notes">
+							 One of the integral parts in Cloudera's Enterprise Data Cloud is Cloudera DataFlow.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFOverview.png" data-background-size="cover">
+						<aside class="notes">
+							 CDF is intended to power your needs around marshalling data from the edge, how it flows through networks and systems, offers processing capabilities while the data is in motion, and analytics presented for every bit of streamed data for what, who, and where.  All of this wrapped around a security governance policy.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFUsecases.png" data-background-size="cover">
+						<aside class="notes">
+							 With CDF you can quickly migrate your data or even just parts of it, to new geos, storage types, and so on.  Enrich your data on fly, pulling in and aggrigating between multiple sources of data to deliver more rich analytics and more holistic vantage points.  In case your SIEM (Security Information and Event Management) system is eating your budget, you can use CDF to cancel out the noise and stream only what's important, be that logs, actions, sensor feedback, or any other sort of data which allows you to get right down to the signal.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFCapsIcons.png" data-background-size="cover">
+						<aside class="notes">
+							 With CDF you can take data in from various sources, be that a data lake you have in a public cloud, your on-premise data warehouse, or even web-based streamed data such as social media streams.  From there you can quickly organize, sort, and transform the streamed data while in flight, and set parameters and policies on where that data goes, such as another tool like Elastic or your SIEM.
+						</aside>
+					</section>
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFHigh.png" data-background-size="cover">
+						<aside class="notes">
+							In case you have a high volume of data to manage and stream, CDF can respond to millions of events a second with data of almost any size imaginable.  Governance policies and life cycles are managed easily from the same secure and end-to-end encrypted drag-and-drop UI that you build your flows in, and if there isn't a stream processor already available in the expansive catalog it's rather easy to create one.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFFReg.png" data-background-size="cover">
+						<aside class="notes">
+							You have more than the Web UI as an interface, flows and their components are stored as files and can be edited manually or produced as part of an automation pipeline.  With the version control offered by the registry in CDF, you can apply the same DevOps and CI/CD workflows that your other development teams benefit from.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBkg.png" data-background-size="cover">
+						<h1>Edge Management</h1>
+						<aside class="notes">
+							 Often times it's easy to manage long lived or rested data, but what about data on low-compute and embedded devices with short half lifes?
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaE2EDM.png" data-background-size="cover">
+						<aside class="notes">
+							 CDF can offer more than just streaming of data, it can offer a way to govern the movement and weight of your data through your enterprise.  This allows you to not only stream, transform, aggrigate, and enrich streaming data but also ensures that it only arrives at its intended destination.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaEM.png" data-background-size="cover">
+						<aside class="notes">
+							 Now, CDF is what helps Cloudera tackle the Edge to AI.  With Minifi, you can stream data from small IoT devices at and beyond the edge.  This can fit on megar IoT and Single Board Computing devices such as the original Raspberry Pi, to more hardened and weather proof real-time OS driven embedded sensors.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBkg.png" data-background-size="cover">
+						<h1>Stream Processing</h1>
+						<aside class="notes">
+							 Some solutions can move and migrate data, but what about managing live streams of data?
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaKeyChallenges.png" data-background-size="cover">
+						<aside class="notes">
+							 Now as you're streaming this data in and out of your data lakes and in-between your edge devices, you'll run into some common problems.  Some streaming solutions require you to move your data somewhere, store it in a specific way, in order to be used which wastes a lot of costly resources and most importantly - time.  Often this is time-series based data so the information is more crucial at the time of inception, which means your insights and analytics programs are operating after the fact instead of being able to respond immediately.  And if you've got all that tacked then I'm sure you know and see every piece of data moving through your enterprise, right?
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaStreamProcessing.png" data-background-size="cover">
+						<aside class="notes">
+							 The solutions offered in CDF actually do tackle those challenges.  With Kafka you have a robust and scalable Publisher/Subscriber queue that can respond to millions of streams.  Apache Storm allows you to act and process upon those streams in real time while the data is still in flight without needing to offload, store, and aggrigate onto a compute cluster.  With the Streams Messaging Manager and the Streaming Analytics Manager you gain the ability to not only see the streams going through your system and their associated properties but you can analyze and visualize thoses streams as well.  The Schema Manager extends powerful access and version control to the key components that make up your flow and provides a collaborative CI/CD workflow to accellerate your data campaigns.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaCDFOverview.png" data-background-size="cover">
+						<aside class="notes">
+							These and other technologies come together to offer you the CDF platform, one of the key components in the EDC that harnesses all of your data, from Edge 2 AI.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaKeyDifferenciators.png" data-background-size="cover">
+						<aside class="notes">
+							 Outside of the technology stack, a few things that set apart CDF is the assurance of Cloudera's 100% dedication to Open Source.  As I mentioned before, there are a bevy of built-in stream processors, the number of which has almost doubled in the last 2 years due to the drive of the community and how easy it is to create new data processors that can work across multiple streaming analytics engines, with governance and management policies baked in.
+						</aside>
+					</section>
+
+					<section data-transition="slide-out" data-background-color="#293c46">
+					</section>
+					<section data-transition="slide-out" data-background-color="#fafafa">
+					</section>
+
+				</section>
+
+				<section>
+
+
+					<section data-background-video="/img/events/cloudera_webinar/geometric-tunnel_wjd0nkzzh__D.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5" style="background:rgba(0,0,0,0.5)">
+							<h1 class="pt-5 pb-5">Cloudera Platform Roadmap</h1>
+						</div>
+						<aside class="notes">
+							Now for something a lot of our customers have been asking out, we'll be taking a quick look at how things are shaping up with the merger of these technology platforms.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-color="#fafafa">
+					</section>
+
+
+					<section data-transition="slide-out" data-background-color="#293c46">
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaYourEnterpriseDataCloud.png" data-background-size="cover">
+						<aside class="notes">
+							 Something being introduced with the new Cloudera EDC is a simple set of tools to manage your entire EDC.  You'll get a single pane of glass to act upon your data lakes, polcies, and workloads.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaIntroducingCDP.png" data-background-size="cover">
+						<aside class="notes">
+							Welcome to the next generation data platform from Cloudera.
+							A single management plane to orchestrate, operate, and secure your whole platform, no matter if it's in the cloud, multiple clouds, on-premise, and even right down to the edge devices.
+							Cloudera's SDX, or Shared Data Experience, is a part of this platform that unifies data management for all your data and presents it with a stateful context that defines the security, governance, cataloging, and lifecycle polcies around the various data endpoints.  This presents you with a data catalog that allows you to apply multi-disciplinary analytic models no matter where your data is.
+							In the middle of this stack sandwich, we have the core functions that comprise the Enterprise Data cloud, be that streaming, manipulating, storing, accessing and analyzing, and creating new ML models, all on an open-source platform.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaBetterCapabilities.png" data-background-size="cover">
+						<aside class="notes">
+							The merger of the two platforms from Cloudera and Hortonworks brought together some amazing technologies, but also presented some overlap.<br />
+							A few of the noteworthy and most asked about changes - moving forward Cloudera will support the very user-friendly Cloudera Manager, Ranger will keep security checks in line, CloudBreak has been selected for automated and multi-cluster managed cloud deployments, and Hive on Tez is being promoted for it's rich integration with the YARN architecture.<br />
+							Looking at the charts you can see that we're greatly benefiting from the merger of these platform since most changes are due to their merging of similar technologies into a more powerful but simpler stack, or integrating complementary technologies.  You'll be happy to know that you can run your Clouder Data Science Workbench Jobs right next to your Zeppelin Notebooks.<br />
+							Now, does this mean that if you were operating the previous Cloudera stack, do you need to rip and replace your Cloudera Director with CloudBreak managed clusters?  Or if you were running a Hortonworks platform do you need to retool around Cloudera Manager immediately?  The answer is no, Cloudera is dedicated to supporting these softwares for a few years to come as their customers carve out their upgrade strategies.<br />
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaNewFormFactor.png" data-background-size="cover">
+						<aside class="notes">
+							 So there's a slight change in form-factor and overarching architecture with the new Cloudera EDC.<br />
+							 As you saw from the screenshot earlier, the new EDC will feature a unified management control plane that's offered as a hosted service by Cloudera.  If you are operating in a secure enclave, don't worry - there are options for disconnected environment as well.<br />
+							 It's through this new management console that you'll not only access your data, but also where you'd instanciate your Data Warehouses, Jobs and ML models, Data Engineering services and more.<br />
+							 SDX is the glue that brings your various data lakes together, and of course this can be run across any supported public cloud provider.
+						</aside>
+					</section>
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaPrivateCloudFormFactor.png" data-background-size="cover">
+						<aside class="notes">
+							If you're not using a Public Cloud providers and are still working on premises or want to include these resources in your EDC, Cloudera offers a wide array of options.<br />
+							As we've seen the industry adopt containers and orchestration platforms like Kubernetes, Cloudera has also developed a scalable architecture on Kubernetes so that your services and workloads can be scaled up and down, out and in, all on demand.<br />
+							Now, you can run this on your own Kubernetes platform, or take the "batteries included" approach where Cloudera provides you with exactly what you need, with the Kubernetes sort of baked in, to quickly get up and running.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaOnePlatform.png" data-background-size="cover">
+						<aside class="notes">
+							The use of Kubernetes as the underlying platform allows Cloudera's EDC to scale and run on any cloud or environment without the need to manage different hypervisors, images, and so on.<br />
+							As Cloudera and Hortonwork's product catalogs and development road maps have converged, we now have the ability to run a unified data platform across our various environments and use a single management console to operate all of your EDC, governance, policies, and workloads enacted on any and all of your data, with the peace of mind knowing that you're operating a 100% open-source data platform that keeps you free from vendor lock-in or relying on cloud-specific APIs and services.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background="/img/events/cloudera_webinar/clouderaFutureDataArch.png" data-background-size="cover">
+						<aside class="notes">
+							So what should you look for and keep in mind when sizing your own EDC?<br />
+							Being able to interact with your data workflows as you would in traditional DevOps practices is key, but your platform components and workloads also need the ability to atomically scale and upgrade.<br />
+							Try to steer clear of products and platforms that rely on one vendor, platform, and specific closed environments or ecosystems.  This keeps you from vendor lock-in and also allows you to deploy your data and workloads where cost and resources are most opportune.<br />
+							Jumping in and out of control panels, different technologies that don't interoperate fluidly, and a lack of automation is what we're already faced with - a unified solution that can intelligently catalog, govern, and secure your EDC is paramount in being able to get up to speed and stay at that pace.<br />
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-color="#000">
+					</section>
+
+
+				</section>
+				-->
+
+				<section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v7.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pb-5" style="background:rgba(0,0,0,0.5);">
+							<h1>DevSecOps and You</h1>
+							<h2>WIIFM</h2>
+						</div>
+						<aside class="notes">
+							So what does all of this mean for you?  Why should you go through this sort of work flow?  What's in it for me - or your organization, mission, program, etc.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v1.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);width: fit-content;margin: 0 auto;">
+							<ul>
+								<li class="fragment"><h2 class="pt-4 pb-4">Release faster & more securely</h2></li>
+								<li class="fragment"><h2 class="pt-4 pb-4 text-alt">Team Upskilling</h2></li>
+								<li class="fragment"><h2 class="pt-4 pb-4">Relieve ATO pain</h2></li>
+								<li class="fragment"><h2 class="pt-4 pb-4 text-alt">Stay ahead of the competition</h2></li>
+							</ul>
+						</div>
+						<aside class="notes">
+							DevOps as a base has been slow moving in the Public Sector - DevSecOps practices and embedded security considerations is making big strides, in some places across entire agencies at large, offered as a service.<br />
+							So this means that you've got the documentation, processes, workflow down, and with the right enablement you can have new developers and operators sit down and work with production-level systems in a few hours.<br />
+							Wait, does this mean I've kind of used Git, documentation, container platforms, and automation to quickly train and upskill new, current, and transitional team members?  Yup!<br />
+							As you get to this we're now not dreading this ATO process - it's something that's operationalized, and a step closer to that ATO or Contracts as a Service idea everyone's starting to formulate.<br />
+							I think probably the most important point is that it keeps us ahead of the competition - we can see the effects of DevSecOps practices by other large organizations and nation states abroad.  This technological agility has been the "make or break" differenciator between commercial entities and it's soon a time where we'll see the same effects on government at large.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-color="#000">
+					</section>
+
+
+				</section>
+
+
+				<section>
+
+					<section data-transition="fade" data-background-color="#FAFAFA">
+					</section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/geometric-tunnel_wjd0nkzzh__D.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);">
+							<h1>Next Steps</h1>
+						</div>
+						<aside class="notes">
+							Alright, now that you've gotten a peek into a Secure Software Factory, what should you do next, how do you go about building and implementing one of your own?
+						</aside>
+					</section>
+
+					<section data-transition="fade" class="pt-0 pb-0" data-background-video="/img/events/cloudera_webinar/geometric-tunnel_wjd0nkzzh__D.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5 mb-5" style="background:rgba(0,0,0,0.75);">
+							<h1>Next Steps</h1>
+						</div>
+						<div class="color-overlay" style="margin:0rem auto;width:100%;float:left;">
+							<img src="/img/events/devsecops/fierceRepoShot.png" class="img-stretch-fix stretch" width="40%" />
+						</div>
+						<div style="float:right;width:100%; margin:3rem;">
+							<h3>@FierceSoftware</h3>
+						</div>
+						<aside class="notes">
+							If you're more technical and want to get started quickly, kick the tires, feel free to explore our GitHub repository - we're live and breathe open-source and you'll find that there are sources for our workshops, training, as well as some new Ansible Playbooks to easily and quickly aid in the deployment of most of this pipeline, partner software, examples, so on.<br />
+							If you're needing trial subscriptions, let us know and we'll be more than happy to get that coordinated for you.
+						</aside>
+					</section>
+
+					<section data-background="/img/events/devsecops/devopsStarterPack.png" data-background-transition="zoom" data-transition="zoom" data-background-size="contain">
+						<aside class="notes">
+							If you have a current Cloudera Account Manager, simply reach out to them - a lot of the their teams that we work with are extremely active and engaged.  Otherwise feel free to reach out directly to us and we'll be happy to get you situated.<br />
+							If you're in the Public Sector, we have a series of Partner Spotlights featuring the Cloudera teams, one of which is the Civilian Sciences team here shown below.
+						</aside>
+					</section>
+
+				</section>
+
+				<section data-background="/img/events/ossecconf2019/questions-anyone-anyone.jpg" data-background-size="contain">
+					<aside class="notes">
+						And before we close, we'd like to open it up to any audience member questions, comments, concerns, qualms, queries, conundrums, or even threats.  We'll field it all.
+					</aside>
+				</section>
+
+				<section data-transition="fade" data-background-color="#000">
+				</section>
+
+				<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v9.mp4" data-background-video-loop="loop">
+					<div data-fragment-index="1" class="text-center fragment fade-down" style="position:relative;top:-5vh;">
+						<img src="/img/global/FSW-SquareLogo_white.png" style="max-width:15vw;" class="img-fix-stretch" alt="Fierce Software" />
+					</div>
+						<div class="text-right" style="position:relative;top:-15vh;">
+
+							<div class="fragment fade" data-fragment-index="3" style="width:42%;margin:2%;float:left;">
+								<h2 class="text-shadow">&nbsp;</h2>
+								<p class="lead text-shadow">&nbsp;<br />&nbsp;</p>
+								<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);">
+									<div class="text-left">
+										<ul class="text-left list-unstyled">
+											<li>
+												<h5>Ken Moini<br /> - Lead Solution Architect</h5>
+												<p class="text-alt">ken@fiercesw.com</p>
+											</li>
+											<li>
+												<h5>Ben Chicoski<br /> - Public Sector Team Lead</h5>
+												<p class="text-alt mb-5">bchicoski@cloudbees.com</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="fragment fade" data-fragment-index="2" style="width:42%;margin:2%;float:right;">
+								<h2 class="text-shadow">Thank You</h2>
+								<p class="lead text-shadow">For more on our Training, Webinars, Workshops and more...</p>
+									<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);">
+										<div class="text-left">
+										<ul class="list-unstyled text-left">
+											<li class="mt-3 mb-3"><i class="fa fa-fw fa-globe"></i> fiercesw.com</li>
+											<li class="mt-3 mb-3 text-alt"><i class="fa fa-fw fa-envelope"></i> info@fiercesw.com</li>
+											<li class="mt-3 mb-3"><i class="fa fa-fw fa-map-pin"></i> Herndon, VA</li>
+											<li class="mt-3 mb-3 text-alt"><i class="fa fa-fw fa-phone"></i> 888.576.1572</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<aside class="notes">
+							I'd like to take a moment to thank everyone for joining and spending the time with us today.<br />
+							I'd also specially like to thank Ben from CloudBees for joining me today, the Ben and Ken literally could not be possible without him.<br />
+							If you're interested in a fast quote, services, or your very own complimentary workshop, please feel free to reach out to us via our main points of contact.<br />
+							We'll be sending a recording and some additional follow-up information after the webinar, if you do not receive this please let us know!<br />
+							Thank you again, and have a ferocious day.
+						</aside>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1920,
+				height: 1080,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.5,
+
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
