@@ -1,0 +1,653 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Big Data NOVA - Data Introduction</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/vs2015.css">
+		<link rel="stylesheet" href="css/fsw-core-shared.css">
+		<link rel="stylesheet" href="vendor/fontawesome-free-5.10.2-web/css/all.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<style type="text/css">
+			.unstyled-list {
+				list-style: none;
+				list-style-type: none !important;
+			}
+			.big-list li {
+				font-size: 5rem !important;
+				margin:2rem 0;
+				text-align: center
+			}
+			.timeline-white .middle-line {
+				border-left:3px solid #FFF;
+			}
+			.timeline-white.timeline-container .right h3:before {
+				border-top:1px solid #FFF;
+			}
+			.timeline-white.timeline-container .left h3:after {
+				border-top:1px solid #FFF;
+			}
+			.siloHolder .silo.black {
+				background:#000;
+				color:#FFF;
+			}
+			.speech-bubble-to-left {
+				position: relative;
+				background: #00aabb;
+				border-radius: .4em;
+			}
+
+			.speech-bubble-to-left:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border: 1.25em solid transparent;
+				border-top-color: #00aabb;
+				border-bottom: 0;
+				border-left: 0;
+				margin-left: -0.625em;
+				margin-bottom: -1.25em;
+			}
+			.speech-bubble-to-right {
+				position: relative;
+				background: #00aabb;
+				border-radius: .4em;
+			}
+
+			.speech-bubble-to-right:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border: 1.25em solid transparent;
+				border-top-color: #00aabb;
+				border-bottom: 0;
+				border-right: 0;
+				margin-left: -0.625em;
+				margin-bottom: -1.25em;
+			}
+			.text-trans-initial {
+				text-transform: initial !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="/img/global/fierceSplash.png">
+				</section>
+
+				<section data-background-color="#050034">
+					<img src="/img/events/bdn/BDNova.png" class="img-fix-stretch stretch" />
+					<marquee style="position:absolute;top:90vh;left:0;width:100%;background:rgba(0,0,0,0.5);padding:1rem;">The Meetup will begin shortly.</marquee>
+				</section>
+
+				<section data-background-video="/img/global/kenmoini_WW.mp4">
+				</section>
+
+				<section data-background="/img/events/bdn/cyber-3400789_1920.jpg" data-background-size="cover">
+					<div class="pt-5 pb-5 pl-5 pr-5">
+						<h1 class="text-left mb-4 alt-text pl-3 pt-3 pb-3" style="background:rgba(0,0,0,0.75)">Data Introduction</h1>
+						<h2 class="text-left pl-3 pt-3 pb-3 mb-0 text-alt alt-text" style="background:rgba(0,0,0,0.75)">Big Data NOVA - Inaugural Meetup!</h2>
+						<h3 class="text-left mb-4 alt-text pl-3 pt-3 pb-3" style="background:rgba(0,0,0,0.75)">Ken Moini - Lead Solution Architect</h3>
+					</div>
+
+					<aside class="notes">
+						Welcome everyone, and thank you for joining us today for our DevSecOps for the Public Sector webinar, in partnership with CloudBees and Sonatype.<br />
+						My name is Ken Moini and I’m the Lead Solution Architect at Fierce Software.<br />
+					</aside>
+				</section>
+
+				<section data-background="/img/global/newFSWNascar.png" data-background-size="contain">
+					<aside class="notes">
+						Fierce Software is a small, woman-owned Value-Added Reseller.  Our strengths are in enterprise open-source solutions, primarily in secure platforms, DevOps, and Data Analytics.<br />
+						Most of our customers are in the Public Sector, we deal directly with Federal System Integrators so the Prime Contractors that make the planes, trains, and automobiles. We work with them to put a lot of these logos together to do some really cool things.<br />
+						We enable our customers with some of our value adds such as complimentary training, webinars, and workshops - we can deploy virtually, on-site, coast-to-coast in a single week.  We drop in with a lab, can work across Automation, Containers, DevOps, Security, and Data Science to name a few topics. We've done lunch and learns to certified 4-day team training campaigns so holler at us if you'd like to explore your own training and workshops.  You've got our social little bits there, we'll provide our contact information at the end as well.<br />
+						Today we'll be focused on all things related to Data.
+					</aside>
+				</section>
+
+				<section data-background-color="#08130f">
+
+					<section data-background-color="#050034">
+						<h1 class="text-left mb-4 alt-text pl-3 pt-3 pb-3" style="background:rgba(0,0,0,0.75)">Data?</h1>
+					</section>
+
+					<section data-background-color="#FFF">
+						<img src="/img/events/bdn/question.png" alt="" width="50%" class="img-fix-stretch" />
+					</section>
+
+					<section data-background-color="#FFF">
+						<img class="event fragment img-fix-stretch mr-5" src="/img/events/bdn/MySQL.svg.png" alt="" /><br />
+						<img class="event fragment img-fix-stretch ml-5" src="/img/events/bdn/58481021cef1014c0b5e494b.png" alt="" /><br />
+						<img class="event fragment img-fix-stretch" src="/img/events/bdn/Scala_logo.png" alt="" />
+					</section>
+
+					<section data-background-color="#FFF">
+						<img class="event fragment img-fix-stretch mr-5" src="/img/events/bdn/python-logo-master-v3-TM.png" alt="" /><br />
+						<img class="event fragment img-fix-stretch ml-5" src="/img/events/bdn/R-programming.png" alt="" /><br />
+						<img class="event fragment img-fix-stretch" src="/img/events/bdn/Scala_logo.png" alt="" />
+					</section>
+
+					<section data-background-color="#050034">
+						<h1 class="pb-4">Compartmentalization</h1>
+						<div class="siloHolder">
+							<div class="siloRow">
+								<div class="silo"></div>
+								<div class="silo active">Logs</div>
+								<div class="silo active">IoT</div>
+								<div class="silo"></div>
+								<div class="silo active">Network</div>
+								<div class="silo trans"></div>
+							</div>
+							<div class="siloRow">
+								<div class="silo trans">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo active">
+									Streams
+								</div>
+								<div class="silo">
+								</div>
+								<div class="silo">
+								</div>
+							</div>
+							<div class="siloRow">
+								<div class="silo active">Events</div>
+								<div class="silo trans"></div>
+								<div class="silo active">CI/CD</div>
+								<div class="silo"></div>
+								<div class="silo active">EDW</div>
+								<div class="silo trans"></div>
+							</div>
+						</div>
+					</section>
+
+					<section data-background-image="/img/events/bdn/graffiti-2212648_1920.jpg">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Hats</h1>
+						</div>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v2.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Data Integration</h1>
+							<h2 class="alt-text pt-3 pb-3">B2B, B2C, B2B2C2U</h2>
+						</div>
+						<aside class="notes">
+							As data drove more and more value and helped move IT from a cost-center to a revenue generating part of the business, integrations became mandatory.<br />
+							Not simply between different teams or systems in your organization, but interchanges between businesses helped pave the way for the hyper-aware and hyper-active capabilties that now give us the ability to know within moments of when an Amazon package has been delivered.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v5.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Data Science</h1>
+							<h2 class="alt-text pt-3 pb-3">More than just Hot Dog/Not Hot Dog</h2>
+						</div>
+						<aside class="notes">
+							With the additional integrated repositories of data and a scalable platform, analysts and scientists could now create and employ models that were previously technologically impossible.<br />
+							This science can range from predictive measures on equipment, to social-economic patterns on a global scale, the tracking of public epidemics, exploration into the depths of the Genome, and personalization functions that improve engagement.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v3.mp4" data-background-video-loop="loop">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>Data Security</h1>
+							<h2 class="alt-text pt-3 pb-3">Don't get Equifuxed</h2>
+						</div>
+						<aside class="notes">
+							Data has accelerated business and the missions of many agencies, however as the value of commodities like data increase, so does the appeal to malicious parties.<br />
+							Throughout the years, and even more so in the recent few, we've seen time and time again about an organization or agency that has been breached.<br />
+							Now, imagine the number of systems breached and the amount of data that has been exfiltrated or tampered with that hasn't been detected or reported.<br />
+							Organizations now more than ever have the requirement and often legal responsibility to keep their data campaigns secure.
+						</aside>
+					</section>
+
+					<section data-background-color="#050034">
+						<div style="padding:2rem;background:rgba(0,0,0,0.8)">
+							<h1>ML & AI & IoT</h1>
+						</div>
+					</section>
+
+					<section data-background-color="#050034">
+						<img src="/img/events/bdn/EECIGFaWsAAtBem.jpeg" alt="" class="img-fix-stretch" width="45%" style="float:left;" />
+						<img src="/img/events/bdn/EEDeJMvWsAAT6p0.jpeg" alt="" class="img-fix-stretch" width="45%" style="float:right;" />
+					</section>
+
+					<section data-background-color="#050034">
+						<img src="/img/events/bdn/dataset-cover.png" alt="" class="img-fix-stretch" />
+					</section>
+
+					<section data-background-color="#FFF" data-background-size="contain">
+						<img src="/img/events/bdn/iot.png" alt="" class="img-fix-stretch" width="60%" />
+					</section>
+
+					<section data-background-transition="none" data-background="/img/events/devsecops/devopsThink.png">
+						<aside class="notes">
+							So as you start to think DevOps, what comes to mind?
+						</aside>
+					</section>
+
+				</section>
+<!-- -->
+
+
+					<section>
+						<section data-background-color="#65c2cb">
+							<h1>Hadoop</h1>
+							<h2 class="alt-text text-white pt-3 pb-3">A History</h2>
+							<aside class="notes">
+								In order to know how we got to where we are today, we should take a brief look back at how the Hadoop ecosystem was planted and grew.
+							</aside>
+						</section>
+
+						<section data-background-transition="slide" data-background-color="#65c2cb">
+							<img class="img-fix-stretch stretch" src="/img/events/cloudera_webinar/0_ecwCzdaur3JBTSr1.png" />
+							<aside class="notes">
+								Most think of Hadoop and this Yellow Elephant pops into their head.<br />
+								The next thought usually goes to "something something big databases" however Hadoop is much more than a solution to the limitations of traditional Relational Databases.<br />
+							</aside>
+						</section>
+
+						<section data-background-transition="slide" data-background-color="#65c2cb">
+							<div class="timeline-container timeline-vertical">
+								<div class="left">
+									<div class="event fragment fade-right" style="margin-top:20vh;">
+										<h3>1997-98</h3>
+										<div class="body">
+											<h2>Lucene</h2>
+											<p>Scalable Search</p>
+											<p><em>What powers Google Searches</em></p>
+										</div>
+									</div>
+								</div>
+								<div class="middle-line">
+								</div>
+								<div class="right">
+									<div class="event fragment fade-left" style="margin-top:50vh;">
+										<h3>2001</h3>
+										<div class="body">
+											<h2>Nutch</h2>
+											<p>Crawl the whole Internet</p>
+											<p><em>How hard could it be?</em></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<aside class="notes">
+								The Hadoop ecosystem can trace its roots back to the early days of the Internet and everything we know and use today.<br />
+								In 1997, Doug Cutting started working on the first version of what would become Apache Lucene, a full-text search library.  It's what powers the sub-second query results that you expect from Google.  Great, with fast search, we can now inspect data.<br />
+								With the help of Mike Cafarella, Doug created what is now Apache Nutch, a crawler, spider, or otherwise a data-scraping robot.  They started to literally crawl the entire Internet, and with Lucene were able to search across everything crawled almost instantly.<br />
+								As you may assume, crawling and searching the entire Internet is a larger order.<br />
+								It was around 2002 where they started to experience scalability issues and started to design a system in software that was schemaless, durable and self-healing, and could be deployed on commodity hardware.<br />
+							</aside>
+						</section>
+
+						<section data-background-transition="slide" data-background-color="#65c2cb">
+							<div class="timeline-container timeline-vertical">
+								<div class="left">
+									<div class="event fragment fade-right" style="margin-top:20vh;">
+										<h3>2003</h3>
+										<div class="body">
+											<h2>GFS</h2>
+											<p>Google File System</p>
+											<p><em>Scalable FS</em></p>
+										</div>
+									</div>
+								</div>
+								<div class="middle-line">
+								</div>
+								<div class="right">
+									<div class="event fragment fade-left" style="margin-top:50vh;">
+										<h3>2004</h3>
+										<div class="body">
+											<h2>NDFS</h2>
+											<p>Nutch Distributed File System</p>
+											<p><em>GFS, but in Java!</em></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<aside class="notes">
+								Around this time, Google releases their specification for Google File System which solved many of the issues Doug and Mike were facing so they set to implement it in Java and thus the Nutch Distributed File System was born.<br />
+								Now that these projects could tackle the task of crawling, searching, and storing large quantities of data, there was the challenge of processing this data in a distributed fashion.  Most other solutions would transport the data to a large computational engine and then ship the results out.  At this sort of scale that was unfeasible.
+							</aside>
+						</section>
+
+						<section data-background-transition="slide" data-background-color="#65c2cb">
+							<div class="timeline-container timeline-vertical">
+								<div class="left">
+									<div class="event fragment fade-right" data-fragment-index="1" style="margin-top:20vh;">
+										<h3>2005</h3>
+										<div class="body">
+											<h2>MapReduce</h2>
+											<p>Integrated with Nutch</p>
+										</div>
+									</div>
+									<div class="event fragment fade-right" data-fragment-index="3" style="margin-top:30vh;">
+										<h3>2007</h3>
+										<div class="body">
+											<h2>Yahoo! Hadoop</h2>
+											<p>1000-nodes in Production</p>
+										</div>
+									</div>
+								</div>
+								<div class="middle-line">
+								</div>
+								<div class="right">
+									<div class="event fragment fade-left" data-fragment-index="2" style="margin-top:40vh;">
+										<h3>2006</h3>
+										<div class="body">
+											<h2>Hadoop was born</h2>
+											<p><img src="/img/events/cloudera_webinar/Hadoop_logo.png" class="img-fix-stretch stretch" alt="Hadoop" /></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<aside class="notes">
+								Enter MapReduce, by Jeffery Dean and Sanjay Ghemawat (Gimma-watt).  MapReduce solved parallelization, distribution, and fault-tollerance by Mapping parts of a job to all nodes, and then Reducing slices of the work back down to the final results.<br />
+								Around this time, the different projects were moved from sub-projects of the Lucene organization, into a new Hadoop ecosystem which consisted of Hadoop Common, HDFS, and MapReduce.<br />
+								Hadoop started to pick up steam, enough to where Yahoo! (if anyone remembers them) replaced their legacy C++ based search engine with Hadoop and within 6 months were running a 1000-node cluster in production.  How could a Java program replace a robust C++ system?  Surprisingly it did so with relative ease.
+							</aside>
+						</section>
+
+						<section data-background-transition="slide" data-background-color="#65c2cb">
+							<div class="timeline-container timeline-vertical">
+								<div class="left">
+									<div class="event fragment fade-right" data-fragment-index="2" style="margin-top:12vh;">
+										<h3>2008</h3>
+										<div class="body" style="max-width:calc(100% - 16rem)">
+											<h2>Ecosystem Explosion</h2>
+											<p>
+												<img data-fragment-index="3" src="/img/events/cloudera_webinar/hbase_logo_with_orca_large.png" alt="HBase" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+												<img data-fragment-index="4" src="/img/events/cloudera_webinar/zookeeper-image.png" alt="Zookeeper" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+												<img data-fragment-index="5" src="/img/events/cloudera_webinar/pig-image.png" alt="Pig" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+												<img data-fragment-index="6" src="/img/events/cloudera_webinar/Apache_Hive_logo.svg.png" alt="Hive" class="fragment fade-up img-fix-stretch" style="max-width:40%;margin:1.5%;" />
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="middle-line">
+								</div>
+								<div class="right">
+									<div class="event fragment fade-left" data-fragment-index="1" style="margin-top:10vh;">
+										<h3>2008</h3>
+										<div class="body" style="max-width:calc(100% - 16rem)">
+											<h2>ASF Induction</h2>
+											<p><img src="/img/events/cloudera_webinar/Hadoop_logo_new.png" class="img-fix-stretch" alt="Apache Hadoop" /></p>
+										</div>
+									</div>
+									<div class="event fragment fade-left" data-fragment-index="7" style="margin-top:10vh;">
+										<h3>2008</h3>
+										<div class="body" style="max-width:calc(100% - 16rem)">
+											<p><img class="img-fix-stretch" src="/img/global/vendor_logos/Cloudera_logo_white.png" alt="Cloudera" /></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<aside class="notes">
+								Between the community and Hadoop's use in production, Hadoop was graduated to a top-level Apache Software Foundation project.<br />
+								After this, we saw an explosion of other projects submitted to be part of the Hadoop ecosystem<br />
+								<ul>
+									<li>HBase offered a natural database on top of the scalable HDFS</li>
+									<li>Zookeeper aided in coordinating the distributed systems</li>
+									<li>Yahoo contributed their Pig programming language that extended MapReduce</li>
+									<li>Facebook contributed Hive, the first incarnation of SQL on top of MapReduce</li>
+									<li>And if that weren't enought, in 2008 Cloudera was founded by Hadoop experts from BerkleyDB, Google, Facebook, and Yahoo!</li>
+								</ul>
+							</aside>
+						</section>
+
+						<section data-background-transition="slide" data-background-color="#65c2cb">
+							<h1>2009</h1>
+							<img data-fragment-index="1" class="img-fix-stretch fragment fade-up" style="width:30%;margin:1%;" src="/img/events/cloudera_webinar/amazon_emr.png" alt="Amazon EMR" />
+							<img data-fragment-index="3" class="img-fix-stretch fragment fade-up mt-4" style="width:20%;margin:0 10rem 0 0;" src="/img/events/cloudera_webinar/YahooLogo.png" alt="Yahoo" /><br />
+							<img data-fragment-index="2" class="img-fix-stretch fragment fade-up mb-5" style="width:35%;margin:1%;" src="/img/events/cloudera_webinar/1200px-Hortonworks_logo.svg.png" alt="Hortonworks" />
+
+							<aside class="notes">
+								There are too many events in the history of the Hadoop ecosystem to chart through all of them at this point, but a few to make mention are:
+								<ul>
+									<li>By March 2009, Amazon was already offering MapReduce hosting, Elastic MapReduce.</li>
+									<li>In June of 2011, Hortonworks was founded by 8 Apache Hadoop Committee members from Yahoo!</li>
+									<li>By 2012, Yahoo!'s Hadoop cluster hit over 42,000 nodes, and there are over 1,200 contributors to the Hadoop projects.</li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+
+					<section>
+
+
+					<section data-background-video="/img/events/cloudera_webinar/v4.mp4" data-background-video-loop="loop">
+						<img class="img-fix-stretch fragment fade-up" style="width:30%;margin:8%" src="/img/global/vendor_logos/Cloudera_logo_white.png" alt="Cloudera" />
+						<img class="img-fix-stretch fragment fade-up" style="width:30%;margin:8%" src="/img/global/vendor_logos/hortonworks-logo-white.png" alt="Cloudera" />
+						<aside class="notes">
+							Throughout the years, the data management ecosystem responded to these challenges.<br />
+							Cloudera put years of work into next generation sciences that enabled new forms of Machine Learning and AI.<br />
+							Hortonworks provided the development into advancing foundational technologies to produce an enterprise-ready data platform.
+						</aside>
+					</section>
+
+					<section data-background-video="/img/events/cloudera_webinar/v4.mp4" data-background-video-loop="loop">
+						<img class="img-fix-stretch" style="width:50%;margin:8%" src="/img/global/vendor_logos/cloudera_logo_white.png" alt="Cloudera" />
+						<aside class="notes">
+							And now, thanks to the merger, the band is back together again as I like to say.  Cloudera is now unified with the most robust open-source Enterprise Data Cloud platform available to date.
+						</aside>
+					</section>
+
+
+						<section data-background-transition="fade" data-transition="fade" data-background="/img/events/devsecops/standardizeOptimizeAutomate.png">
+							<aside class="notes">
+								So if you've ever worked on American AND Import cars you know the pain in having to have two different tool sets - metrics or SAE/imperial.<br />
+								The 3 pillars of DevSecOps is to Standardize, Optimize, and Automate.
+							</aside>
+						</section>
+
+
+					</section>
+
+
+
+
+
+
+
+
+				<section>
+
+					<section data-transition="fade" data-background-color="#FAFAFA">
+					</section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/geometric-tunnel_wjd0nkzzh__D.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);">
+							<h1>Next Steps</h1>
+						</div>
+						<aside class="notes">
+							Alright, now that you've gotten a peek into a Secure Software Factory, what should you do next, how do you go about building and implementing one of your own?
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v8.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5 mb-5" style="background:rgba(0,0,0,0.75);">
+							<h1>Next Steps</h1>
+						</div>
+						<div class="color-overlay" style="margin:0rem auto;width:50%;float:left;">
+							<video loop autoplay style="max-width:100%;max-height:100%;margin-left:6%;float:left;">
+								<source src="/img/events/cloudera_webinar/PSClouderaKPIBHeaderCrop.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<div style="float:right;margin-right:6%;width:35%;">
+							<img style="margin-top:5rem;" src="/img/events/cloudera_webinar/qr.png" />
+						</div>
+						<div style="float:left;width:100%; margin:3rem;">
+							<h3>https://go.fiercesw.com/p/cloudera-civilian-sciences</h3>
+						</div>
+						<aside class="notes">
+							If you have a current Hortonworks or Cloudera Account Manager, simply reach out to them - a lot of the their teams that we work with are extremely active and engaged.<br />
+							If you're in the Public Sector, we have a series of Partner Spotlights featuring the Cloudera teams, one of which is the Civilian Sciences team here.
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v8.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5 mb-5" style="background:rgba(0,0,0,0.75);">
+							<h1>Next Steps</h1>
+						</div>
+						<div class="color-overlay" style="margin:0rem auto;width:100%;float:left;">
+							<img src="/img/events/cloudera_webinar/fswGit.jpg" />
+						</div>
+						<div style="float:right;width:100%; margin:3rem;">
+							<h3>@FierceSoftware</h3>
+						</div>
+						<aside class="notes">
+							If you're more technical and want to get started quickly, feel free to explore our GitHub repository - there are sources for our workshops, training, as well as some new Ansible Playbooks to easily and quickly deploy Cloudera Director, Manager, and Data Science Workbench in the cloud.<br />
+						</aside>
+					</section>
+
+					<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v8.mp4" data-background-video-loop="loop">
+						<div class="pl-5 pr-5 pt-5 pb-5 mb-5" style="background:rgba(0,0,0,0.75);">
+							<h1>Next Steps</h1>
+						</div>
+						<div class="color-overlay" style="margin:0rem auto;width:100%;float:left;">
+							<h3><ul>
+								<li>Cloudera University</li>
+								<li>Kaggle</li>
+								<li>GitHub</li>
+								<li>Reddit</li>
+							</ul></h3>
+						</div>
+						<aside class="notes">
+							If you're more technical and want to get started quickly, feel free to explore our GitHub repository - there are sources for our workshops, training, as well as some new Ansible Playbooks to easily and quickly deploy Cloudera Director, Manager, and Data Science Workbench in the cloud.<br />
+						</aside>
+					</section>
+
+				</section>
+
+				<section data-background="/img/events/ossecconf2019/questions-anyone-anyone.jpg" data-background-size="contain">
+					<aside class="notes">
+						And before we close, we'd like to open it up to any audience member questions, comments, concerns, qualms, queries, conundrums, or even threats.  We'll field it all.
+					</aside>
+				</section>
+
+				<section data-transition="fade" data-background-color="#000">
+				</section>
+
+				<section data-transition="fade" data-background-video="/img/events/cloudera_webinar/v9.mp4" data-background-video-loop="loop">
+					<div data-fragment-index="1" class="text-center fragment fade-down" style="position:relative;top:-5vh;">
+						<img src="/img/global/FSW-SquareLogo_white.png" style="max-width:15vw;" class="img-fix-stretch" alt="Fierce Software" />
+					</div>
+					<div class="text-right" style="position:relative;top:-15vh;">
+
+						<div class="fragment fade" data-fragment-index="3" style="width:42%;margin:2%;float:left;">
+							<h2 class="text-shadow">&nbsp;</h2>
+							<p class="lead text-shadow">&nbsp;<br />&nbsp;</p>
+							<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);">
+								<div class="text-left">
+									<ul class="text-left list-unstyled">
+										<li >
+											<h5>Jamie Borup - DA Team Lead</h5>
+											<p class="text-alt mb-5">jamie@fiercesw.com</p>
+										</li>
+										<li>
+											<h5>Ken Moini - Lead Solution Architect</h5>
+											<p class="text-alt">ken@fiercesw.com</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="fragment fade" data-fragment-index="2" style="width:42%;margin:2%;float:right;">
+							<h2 class="text-shadow">Thank You</h2>
+							<p class="lead text-shadow">For more on our Training, Webinars, Workshops and more...</p>
+								<div class="pl-5 pr-5 pt-5 pb-5" style="background:rgba(0,0,0,0.75);">
+									<div class="text-left">
+									<ul class="list-unstyled text-left">
+										<li class="mt-3 mb-3"><i class="fa fa-fw fa-globe"></i> fiercesw.com</li>
+										<li class="mt-3 mb-3 text-alt"><i class="fa fa-fw fa-envelope"></i> cloudera@fiercesw.com</li>
+										<li class="mt-3 mb-3"><i class="fa fa-fw fa-map-pin"></i> Herndon, VA</li>
+										<li class="mt-3 mb-3 text-alt"><i class="fa fa-fw fa-phone"></i> 888.576.1572</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+						<aside class="notes">
+							I'd like to take a moment to thank everyone for joining and spending the time with us today.<br />
+							I'd also specially like to thank Ben from CloudBees for joining me today, the Ben and Ken literally could not be possible without him.<br />
+							If you're interested in a fast quote, services, or your very own complimentary workshop, please feel free to reach out to us via our main points of contact.<br />
+							We'll be sending a recording and some additional follow-up information after the webinar, if you do not receive this please let us know!<br />
+							Thank you again, and have a ferocious day.
+						</aside>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1920,
+				height: 1080,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.5,
+
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
