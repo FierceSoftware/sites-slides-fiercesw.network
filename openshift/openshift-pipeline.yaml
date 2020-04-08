@@ -175,7 +175,16 @@ spec:
                           openshift.selector('route', 'secure-sites-slides-fiercesw-network').delete()
                         }
                         //openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose()
-                        openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose("--hostname=slides.stage.fiercesw.network")
+                        //openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose("--hostname=slides.stage.fiercesw.network")
+                
+                        def stageApp = openshift.newApp("sites-slides-fiercesw-network:${version}")
+                        def stageAppDc = stageApp.narrow('dc')
+                        def stageAppDcMap = stageAppDc.object()
+                        stageAppDcMap.metadata.annotations['openshift.io/node-selector'] = "production=true"
+                        stageAppDcMap.spec.template.metadata.annotations['openshift.io/node-selector'] = "production=true"
+                        stageAppDcMap.spec.template.spec.nodeSelector = ['production' : 'true']
+                        openshift.apply(stageAppDcMap)
+
                         openshift.create(readFile('openshift/openshift-staging-secure-route.yaml'))
                       }
                     }
@@ -212,7 +221,13 @@ spec:
                           openshift.selector('route', 'secure-sites-slides-fiercesw-network').delete()
                         }
                         //openshift.newApp("sites-slides-fiercesw-network:${version}").narrow("svc").expose("--hostname=slides.fiercesw.network")
-                        openshift.newApp("sites-slides-fiercesw-network:${version}")
+                        def prodApp = openshift.newApp("sites-slides-fiercesw-network:${version}")
+                        def prodAppDc = prodApp.narrow('dc')
+                        def prodAppDcMap = prodAppDc.object()
+                        prodAppDcMap.metadata.annotations['openshift.io/node-selector'] = "production=true"
+                        prodAppDcMap.spec.template.metadata.annotations['openshift.io/node-selector'] = "production=true"
+                        prodAppDcMap.spec.template.spec.nodeSelector = ['production' : 'true']
+                        openshift.apply(prodAppDcMap)
                         openshift.create(readFile('openshift/openshift-production-secure-route.yaml'))
                       }
                     }
@@ -226,6 +241,9 @@ spec:
     - github:
         secret: secret101
       type: GitHub
+    - gitlab:
+        secret: secret101
+      type: GitLab
     - generic:
         secret: secret101
       type: Generic
